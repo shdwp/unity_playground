@@ -24,9 +24,8 @@ namespace RollingDownDemo.Scripts
      * +--------+
      * C        F
      *
-     * We can get away with using 6 vertices (3 edges, 3 faces) as a minor optimization since
-     * target object will have light emissions at high enough level to not worry about properly shading it.
-     *
+     * We can get away with using 6 vertices (3 edges, 3 faces) since
+     * it's actually preferable for the figure to be shaded as tube
      */
     public class DrawnMeshBuilder
     {
@@ -43,19 +42,20 @@ namespace RollingDownDemo.Scripts
 
         public void AddSegment(Vector2 from, Vector2 to, float size)
         {
+            var halfSize = size / 2f;
             var normalizedDistance = (to - from).normalized;
-            var xSize = Vector2.Dot(Vector2.up, normalizedDistance) * size / 2f;
-            var ySize = Vector2.Dot(Vector2.right, normalizedDistance) * size / 2f;
+            var xSize = Vector2.Dot(Vector2.up, normalizedDistance) * halfSize;
+            var ySize = Vector2.Dot(Vector2.right, normalizedDistance) * halfSize;
             
             _verts.AddRange(new []
             {
-                /* A */ new Vector3(from.x + xSize, from.y - ySize, size), 
-                /* B */ new Vector3(from.x - xSize, from.y + ySize, 0f), 
-                /* C */ new Vector3(from.x + xSize, from.y - ySize, 0f), 
+                /* A */ new Vector3(from.x + xSize, from.y - ySize, halfSize), 
+                /* B */ new Vector3(from.x - xSize, from.y + ySize, -halfSize), 
+                /* C */ new Vector3(from.x + xSize, from.y - ySize, -halfSize), 
                 
-                /* D */ new Vector3(to.x + xSize, to.y - ySize, size), 
-                /* E */ new Vector3(to.x - xSize, to.y + ySize, 0f), 
-                /* F */ new Vector3(to.x + xSize, to.y - ySize, 0f), 
+                /* D */ new Vector3(to.x + xSize, to.y - ySize, halfSize), 
+                /* E */ new Vector3(to.x - xSize, to.y + ySize, -halfSize), 
+                /* F */ new Vector3(to.x + xSize, to.y - ySize, -halfSize), 
             });
 
             var count = _verts.Count;
@@ -85,9 +85,10 @@ namespace RollingDownDemo.Scripts
                 return;
             }
 
+            var halfSize = size / 2f;
             var normalizedDistance = (to - _segmentStart.Value).normalized;
-            var xSize = Vector2.Dot(Vector2.up, normalizedDistance) * size / 2f;
-            var ySize = Vector2.Dot(Vector2.right, normalizedDistance) * size / 2f;
+            var xSize = Vector2.Dot(Vector2.up, normalizedDistance) * halfSize;
+            var ySize = Vector2.Dot(Vector2.right, normalizedDistance) * halfSize;
             
             // get previous EDF->ABC vertices
             var count = _verts.Count;
@@ -95,9 +96,9 @@ namespace RollingDownDemo.Scripts
             
             _verts.AddRange(new []
             {
-                /* D */ new Vector3(to.x + xSize, to.y - ySize, size), 
-                /* E */ new Vector3(to.x - xSize, to.y + ySize, 0f), 
-                /* F */ new Vector3(to.x + xSize, to.y - ySize, 0f), 
+                /* D */ new Vector3(to.x + xSize, to.y - ySize, halfSize), 
+                /* E */ new Vector3(to.x - xSize, to.y + ySize, -halfSize), 
+                /* F */ new Vector3(to.x + xSize, to.y - ySize, -halfSize), 
             });
             
             count = _verts.Count;
@@ -130,6 +131,7 @@ namespace RollingDownDemo.Scripts
                 _mesh.SetVertices(_verts);
                 _mesh.SetTriangles(_trigs, 0);
                 _mesh.RecalculateBounds();
+                _mesh.RecalculateNormals();
 
                 _cooked = true;
                 return _mesh;
