@@ -1,0 +1,6 @@
+#ifndef OPENCV_MESH_LIBRARY_H
+#define OPENCV_MESH_LIBRARY_H
+
+void hello();
+
+#endif //OPENCV_MESH_LIBRARY_H

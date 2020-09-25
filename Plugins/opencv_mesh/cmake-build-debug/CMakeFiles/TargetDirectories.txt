@@ -1,0 +1,3 @@
+D:/UnityProjects/UnityPlayground/Plugins/opencv_mesh/cmake-build-debug/CMakeFiles/opencv_mesh.dir
+D:/UnityProjects/UnityPlayground/Plugins/opencv_mesh/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/UnityProjects/UnityPlayground/Plugins/opencv_mesh/cmake-build-debug/CMakeFiles/rebuild_cache.dir
