@@ -9,10 +9,18 @@
       <e p="Assets" t="Include">
         <e p="RollingDownDemo" t="Include">
           <e p="Scripts" t="Include">
-            <e p="DrawController.cs" t="Include" />
-            <e p="DrawnMeshBuilder.cs" t="Include" />
-            <e p="DrawnMeshBuilderPreviewController.cs" t="Include" />
-            <e p="PlayerController.cs" t="Include" />
+            <e p="DrawScene" t="Include">
+              <e p="DrawnMeshBuilder.cs" t="Include" />
+              <e p="DrawnMeshBuilderPreviewController.cs" t="Include" />
+              <e p="DrawSceneController.cs" t="Include" />
+              <e p="UserDrawingController.cs" t="Include" />
+            </e>
+            <e p="GameplayScene" t="Include">
+              <e p="FollowCameraController.cs" t="Include" />
+              <e p="GameplaySceneController.cs" t="Include" />
+              <e p="ObstacleController.cs" t="Include" />
+              <e p="PlayerController.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Scripts" t="Include">
