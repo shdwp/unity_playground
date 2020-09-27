@@ -56,7 +56,7 @@ namespace RollingDownDemo.Scripts.GameplayScene
         /// </summary>
         private void RestartAction()
         {
-            SceneManager.LoadSceneAsync("GameplayScene").completed += (_) =>
+            SceneManager.LoadSceneAsync("MeshDrawingGameplayScene").completed += (_) =>
             {
                 // set previous scene mesh to the new scene instance
                 var controller = FindObjectOfType<GameplaySceneController>();

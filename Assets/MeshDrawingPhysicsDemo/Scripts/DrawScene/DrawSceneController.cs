@@ -28,7 +28,7 @@ namespace RollingDownDemo.Scripts.DrawScene
             var mesh = drawingController.mesh;
 
             // load gameplay scene and wait for completion
-            SceneManager.LoadSceneAsync("GameplayScene").completed += (_) =>
+            SceneManager.LoadSceneAsync("MeshDrawingGameplayScene").completed += (_) =>
             {
                 var controller = FindObjectOfType<GameplaySceneController>();
                 
