@@ -5,9 +5,132 @@
     <e p="C:\Users\shdwp\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_UnityPlayground.-1650746773.00" t="ExcludeRecursive" />
     <e p="D:\UnityProjects\UnityPlayground" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="RollingDownDemo" t="Include">
+        <e p="ARDemo" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="ExternalVideoFeederController.cs" t="Include" />
+            <e p="Game" t="Include">
+              <e p="GameController.cs" t="Include" />
+              <e p="GameTargetController.cs" t="Include" />
+            </e>
+            <e p="ImageTrackerController.cs" t="Include" />
+            <e p="TargetTrack" t="Include">
+              <e p="TargetTrack.cs" t="Include" />
+              <e p="TargetTrackEditorGizmoController.cs" t="Include" />
+            </e>
+            <e p="UIController.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Editor" t="Include">
+          <e p="IPlistEditor.cs" t="Include" />
+        </e>
+        <e p="MaxstAR" t="Include">
+          <e p="Editor" t="Include">
+            <e p="ARManagerEditor.cs" t="Include" />
+            <e p="CloudTrackableEditor.cs" t="Include" />
+            <e p="ConfigurationScriptableObjectEditor.cs" t="Include" />
+            <e p="ImageTrackableEditor.cs" t="Include" />
+            <e p="InstantTrackableEditor.cs" t="Include" />
+            <e p="MapRendererEditor.cs" t="Include" />
+            <e p="MapViewerEditor.cs" t="Include" />
+            <e p="MarkerGroupEditor.cs" t="Include" />
+            <e p="MarkerTrackableEditor.cs" t="Include" />
+            <e p="ObjectTrackableEditor.cs" t="Include" />
+            <e p="QrCodeTrackableEditor.cs" t="Include" />
+            <e p="SceneManager.cs" t="Include" />
+          </e>
+          <e p="Script" t="Include">
+            <e p="AndroidEngine.cs" t="Include" />
+            <e p="ARManager.cs" t="Include" />
+            <e p="CameraBackgroundBehaviour.cs" t="Include" />
+            <e p="CloudTrackableBehaviour.cs" t="Include" />
+            <e p="ConfigurationScriptableObject.cs" t="Include" />
+            <e p="FeaturePointBehaviour.cs" t="Include" />
+            <e p="ImageTrackableBehaviour.cs" t="Include" />
+            <e p="InstantTrackableBehaviour.cs" t="Include" />
+            <e p="MapViewerBehaviour.cs" t="Include" />
+            <e p="MarkerGroupBehaviour.cs" t="Include" />
+            <e p="MarkerTrackerBehaviour.cs" t="Include" />
+            <e p="ObjectTrackableBehaviour.cs" t="Include" />
+            <e p="PinchZoom.cs" t="Include" />
+            <e p="QrCodeTrackableBehaviour.cs" t="Include" />
+            <e p="WearableDeviceController.cs" t="Include" />
+            <e p="WearableManager.cs" t="Include" />
+            <e p="Wrapper" t="Include">
+              <e p="AbstractARManager.cs" t="Include" />
+              <e p="AbstractCameraBackgroundBehaviour.cs" t="Include" />
+              <e p="AbstractCloudTrackableBehaviour.cs" t="Include" />
+              <e p="AbstractConfigurationScriptableObject.cs" t="Include" />
+              <e p="AbstractFeaturePointBehaviour.cs" t="Include" />
+              <e p="AbstractImageTrackableBehaviour.cs" t="Include" />
+              <e p="AbstractInstantTrackableBehaviour.cs" t="Include" />
+              <e p="AbstractMapViewerBehaviour.cs" t="Include" />
+              <e p="AbstractMarkerTrackableBehaviour.cs" t="Include" />
+              <e p="AbstractObjectTrackableBehaviour.cs" t="Include" />
+              <e p="AbstractQrCodeTrackableBehaviour.cs" t="Include" />
+              <e p="AbstractTrackableBehaviour.cs" t="Include" />
+              <e p="APIController.cs" t="Include" />
+              <e p="CameraDevice.cs" t="Include" />
+              <e p="CloudRecognitionAPIController.cs" t="Include" />
+              <e p="CloudRecognitionController.cs" t="Include" />
+              <e p="CloudRecognitionData.cs" t="Include" />
+              <e p="CloudRecognizerCache.cs" t="Include" />
+              <e p="CloudReocgnitionLocalData.cs" t="Include" />
+              <e p="ColorFormat.cs" t="Include" />
+              <e p="Dimensions.cs" t="Include" />
+              <e p="GuideInfo.cs" t="Include" />
+              <e p="JpegUtils.cs" t="Include" />
+              <e p="JsonHelper.cs" t="Include" />
+              <e p="Map3D.cs" t="Include" />
+              <e p="MapRendererBehaviour.cs" t="Include" />
+              <e p="MapViewer.cs" t="Include" />
+              <e p="MatrixUtils.cs" t="Include" />
+              <e p="MaxstAR.cs" t="Include" />
+              <e p="MaxstARUtil.cs" t="Include" />
+              <e p="MaxstSingleton.cs" t="Include" />
+              <e p="NativeAPI.cs" t="Include" />
+              <e p="Point3Df.cs" t="Include" />
+              <e p="ResultCode.cs" t="Include" />
+              <e p="SensorDevice.cs" t="Include" />
+              <e p="SurfaceThumbnail.cs" t="Include" />
+              <e p="TagAnchor.cs" t="Include" />
+              <e p="TagAnchors.cs" t="Include" />
+              <e p="Trackable.cs" t="Include" />
+              <e p="TrackedImage.cs" t="Include" />
+              <e p="TrackerManager.cs" t="Include" />
+              <e p="TrackingResult.cs" t="Include" />
+              <e p="TrackingState.cs" t="Include" />
+              <e p="WearableCalibration.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="MaxstARSamples" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="AdaptingEventSystemDragThreshold.cs" t="Include" />
+            <e p="ARBehaviour.cs" t="Include" />
+            <e p="BackKeyHandler.cs" t="Include" />
+            <e p="CameraConfigurationSample.cs" t="Include" />
+            <e p="CloudTrackerSample.cs" t="Include" />
+            <e p="CodeScanSample.cs" t="Include" />
+            <e p="HomeSceneManager.cs" t="Include" />
+            <e p="ImageFusionTrackerSample.cs" t="Include" />
+            <e p="ImageTrackerSample.cs" t="Include" />
+            <e p="InstantFusionTrackerSample.cs" t="Include" />
+            <e p="InstantTrackerSample.cs" t="Include" />
+            <e p="MarkerFusionTrackerSample.cs" t="Include" />
+            <e p="MarkerTrackerSample.cs" t="Include" />
+            <e p="ObjectFusionTrackerSample.cs" t="Include" />
+            <e p="ObjectTrackerSample.cs" t="Include" />
+            <e p="QrCodeFusionTrackerSample.cs" t="Include" />
+            <e p="QrCodeTrackerSample.cs" t="Include" />
+            <e p="SceneStackManager.cs" t="Include" />
+            <e p="SingleTon.cs" t="Include" />
+            <e p="VideoTrackerSample.cs" t="Include" />
+          </e>
+        </e>
+        <e p="MeshDrawingPhysicsDemo" t="Include">
           <e p="Scripts" t="Include">
             <e p="DrawScene" t="Include">
               <e p="DrawnMeshBuilder.cs" t="Include" />
@@ -23,8 +146,42 @@
             </e>
           </e>
         </e>
+        <e p="Plugins" t="Include">
+          <e p="Android" t="Include">
+            <e p="AndroidManifest.xml" t="Include" />
+          </e>
+          <e p="AndroidRuntimePermissions" t="Include">
+            <e p="Android" t="Include">
+              <e p="PermissionCallback.cs" t="Include" />
+              <e p="PermissionCallbackAsync.cs" t="Include" />
+              <e p="PermissionCallbackHelper.cs" t="Include" />
+            </e>
+            <e p="AndroidRuntimePermissions.cs" t="Include" />
+            <e p="CREDITS.txt" t="Include" />
+            <e p="README.txt" t="Include" />
+          </e>
+          <e p="licenses" t="Include">
+            <e p="3rdparty_license.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Resources" t="Include">
+          <e p="MaxstAR" t="Include">
+            <e p="Shader" t="Include">
+              <e p="AndroidYuv420Background.shader" t="Include" />
+              <e p="CullingOffUnlitShader.shader" t="Include" />
+              <e p="RGBABackground.shader" t="Include" />
+              <e p="RGBBackground.shader" t="Include" />
+              <e p="Yuv420_888Background.shader" t="Include" />
+              <e p="Yuv420Background.shader" t="Include" />
+              <e p="Yuv420NonRG16Background.shader" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="SimpleCameraController.cs" t="Include" />
+        </e>
+        <e p="StreamingAssets" t="Include">
+          <e p="arsdk_version.txt" t="Include" />
         </e>
         <e p="TutorialInfo" t="Include">
           <e p="Scripts" t="Include">

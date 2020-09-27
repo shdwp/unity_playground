@@ -69,3 +69,11 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+Assets/MaxstAR
+Assets/Editor/MaxstAR
+Assets/MaxstARSamples
+Assets/Plugins
+Assets/Resources/MaxstAR
+Assets/StreamingAssets/MaxstAR
+Assets/Resources/Configuration
