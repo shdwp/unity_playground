@@ -10,17 +10,19 @@
       <e p="Assets" t="Include">
         <e p="ARDemo" t="Include">
           <e p="Scripts" t="Include">
-            <e p="ExternalVideoFeederController.cs" t="Include" />
+            <e p="ARTracking" t="Include">
+              <e p="ExternalVideoFeederController.cs" t="Include" />
+              <e p="ImageTrackerController.cs" t="Include" />
+            </e>
             <e p="Game" t="Include">
-              <e p="GameController.cs" t="Include" />
+              <e p="GameModelController.cs" t="Include" />
               <e p="GameTargetController.cs" t="Include" />
             </e>
-            <e p="ImageTrackerController.cs" t="Include" />
-            <e p="TargetTrack" t="Include">
-              <e p="TargetTrack.cs" t="Include" />
-              <e p="TargetTrackEditorGizmoController.cs" t="Include" />
+            <e p="GameFlowController.cs" t="Include" />
+            <e p="TargetRacetrack" t="Include">
+              <e p="TargetRacetrackEditorGizmos.cs" t="Include" />
+              <e p="TargetRacetrackModel.cs" t="Include" />
             </e>
-            <e p="UIController.cs" t="Include" />
           </e>
         </e>
         <e p="Editor" t="Include">

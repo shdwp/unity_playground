@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 
-namespace ARDemo.Scripts.TargetTrack
+namespace ARDemo.Scripts.TargetRacetrack
 {
+    /// <summary>
+    /// Small behaviour visualizing race tracks so they could be easily put together in the editor.
+    /// You might also want to enable _EditorBackdrop object so that there will be a marker reference at 0;0;0.
+    /// </summary>
     public class TargetRacetrackEditorGizmos : MonoBehaviour
     {
         private void OnDrawGizmos()
@@ -27,6 +31,7 @@ namespace ARDemo.Scripts.TargetTrack
                 previousPoint = child.position;
             }
 
+            // draw line connecting last and first points
             if (previousPoint.HasValue && firstPoint.HasValue)
             {
                 Gizmos.DrawLine(previousPoint.Value, firstPoint.Value);

@@ -716,7 +716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &197354651
 Transform:
   m_ObjectHideFlags: 0
@@ -1582,6 +1582,7 @@ MonoBehaviour:
   tracksRoot: {fileID: 582556485}
   world: {fileID: 809881227}
   targetPrefab: {fileID: 9123759229293069563, guid: ccb70d11838d5624abe100bac7bbc358, type: 3}
+  gameLengthInSeconds: 5
   score: 0
 --- !u!4 &926397036
 Transform:
@@ -1983,9 +1984,9 @@ MonoBehaviour:
   resultsText: {fileID: 69661308}
   playerCamera: {fileID: 96163127}
   trackableWorld: {fileID: 809881227}
-  _pref: {fileID: 9123759229293069562, guid: ccb70d11838d5624abe100bac7bbc358, type: 3}
   gameModel: {fileID: 926397035}
   tracker: {fileID: 1692966654}
+  hitThreshold: 0.03
 --- !u!4 &1312935907
 Transform:
   m_ObjectHideFlags: 0
@@ -2326,6 +2327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trackable: {fileID: 809881226}
   backgroundBehaviour: {fileID: 1446097210}
+  isTracking: 0
 --- !u!4 &1692966655
 Transform:
   m_ObjectHideFlags: 0
