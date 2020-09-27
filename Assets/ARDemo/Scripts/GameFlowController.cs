@@ -22,6 +22,11 @@ namespace ARDemo.Scripts
         public Text pauseButtonText;
         public Text resultsText;
 
+        [Header("SFX bindings")] 
+        public AudioSource uiAudioSource;
+        public AudioSource hitAudioSource;
+        public AudioSource finishAudioSource;
+
         [Header("World")]
         public Camera playerCamera;
         public Transform trackableWorld;
@@ -80,6 +85,7 @@ namespace ARDemo.Scripts
             {
                 if (gameModel.isFinished)
                 {
+                    // @TODO: move this check to game model delegate
                     // model notifies that game has been finished, move to finished state
                     TransitionToState(GameState.Finished);
                 }
@@ -100,6 +106,8 @@ namespace ARDemo.Scripts
                         var hitIdx = gameModel.TestUserHit(ray.GetPoint(dist), hitThreshold);
                         if (hitIdx.HasValue)
                         {
+                            // play sound cue
+                            hitAudioSource.Play();
                             gameModel.CommitUserHit(hitIdx.Value);
                         }
                     }
@@ -168,6 +176,9 @@ namespace ARDemo.Scripts
                     TransitionToState(GameState.InProgress);
                     break;
             }
+            
+            // play sound cue
+            uiAudioSource.Play();
         }
 
         /// <summary>
@@ -197,6 +208,9 @@ namespace ARDemo.Scripts
                     TransitionToState(GameState.InProgress);
                     break;
             }
+            
+            // play sound cue
+            uiAudioSource.Play();
         }
 
         /// <summary>
@@ -216,6 +230,9 @@ namespace ARDemo.Scripts
                     gameModel.GameRestart();
                     break;
             }
+            
+            // play sound cue
+            uiAudioSource.Play();
         }
 
         /// <summary>
@@ -244,6 +261,11 @@ namespace ARDemo.Scripts
                         case GameState.PausedByUserAndTracking:
                             // game was in progress but paused by either user or tracking (or both)
                             gameModel.GamePause();
+                            break;
+                        
+                        case GameState.Finished:
+                            // game just finished
+                            finishAudioSource.Play();
                             break;
                     }
                     break;

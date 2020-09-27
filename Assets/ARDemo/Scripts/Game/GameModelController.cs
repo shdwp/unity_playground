@@ -32,7 +32,7 @@ namespace ARDemo.Scripts.Game
         /// <summary>
         /// Length of the game in seconds
         /// </summary>
-        public int gameLengthInSeconds = 60;
+        public int gameLengthInSeconds = 30;
 
         private bool _started = false, _paused = false, _finished = false;
         
