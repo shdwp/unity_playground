@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Linq;
-using UnityEditor.Build.Reporting;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace LigthsaberDemo.Scripts
 {

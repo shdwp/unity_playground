@@ -81,13 +81,13 @@
         <option value="$PROJECT_DIR$/Assets/Editor/NormalsVisualizer.cs" />
         <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/CuttableObject.cs" />
         <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/CuttableObjectsController.cs" />
-        <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/DebrisController.cs" />
         <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/LightsaberMouseController.cs" />
         <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/LightsaberDemoLib.cs" />
         <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/MeshBuilder.cs" />
-        <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/BladeTrailRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/LightsaberMouseInputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/DebrisController.cs" />
         <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/TargetObjectsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/BladeTrailRenderer.cs" />
       </list>
     </option>
   </component>
@@ -152,7 +152,7 @@
       <workItem from="1601291199085" duration="7835000" />
       <workItem from="1601555306728" duration="303000" />
       <workItem from="1601728715964" duration="29471000" />
-      <workItem from="1601907247219" duration="19620000" />
+      <workItem from="1601907247219" duration="21487000" />
     </task>
     <servers />
   </component>

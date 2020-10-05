@@ -107,6 +107,14 @@ namespace LigthsaberDemo.Scripts
                     // invalidate mesh
                     dirtyMesh = true;
                 }
+                
+                if (_trigs.Count == 0)
+                {
+                    // at this point all segments are removed and distance covered in current motion is not enough
+                    // to start new segment, therefore nullify variables so the segment can start anew
+                    _currentSegmentBeginning = null;
+                    _currentSegmentEnd = null;
+                }
             }
 
             if (dirtyMesh)
@@ -114,6 +122,7 @@ namespace LigthsaberDemo.Scripts
                 // populate actual rendered mesh with new values since they were updated
                 CommitMeshChanges();
             }
+            
         }
 
         /// <summary>
@@ -168,7 +177,7 @@ namespace LigthsaberDemo.Scripts
             // iterate over segment times (array is always in sync with _trigs and _verts)
             for (int i = 0; i < segmentTimes.Length; i++)
             {
-                var timeDelta = Time.realtimeSinceStartup - segmentTimes[i];
+                var timeDelta = Time.timeSinceLevelLoad - segmentTimes[i];
                 if (timeDelta > trailDurationSeconds)
                 {
                     // time list is always ascending, meaning that expired segment is always first
