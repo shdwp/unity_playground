@@ -28,6 +28,15 @@
         <e p="Editor" t="Include">
           <e p="IPlistEditor.cs" t="Include" />
         </e>
+        <e p="LigthsaberDemo" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="BladeTrailRenderer.cs" t="Include" />
+            <e p="CuttableObjectsController.cs" t="Include" />
+            <e p="DebrisController.cs" t="Include" />
+            <e p="LightsaberMouseController.cs" t="Include" />
+            <e p="MeshBuilder.cs" t="Include" />
+          </e>
+        </e>
         <e p="MaxstAR" t="Include">
           <e p="Editor" t="Include">
             <e p="ARManagerEditor.cs" t="Include" />
@@ -148,6 +157,12 @@
             </e>
           </e>
         </e>
+        <e p="PlaygroundSelect" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="SceneSphereController.cs" t="Include" />
+            <e p="SimpleCameraController.cs" t="Include" />
+          </e>
+        </e>
         <e p="Plugins" t="Include">
           <e p="Android" t="Include">
             <e p="AndroidManifest.xml" t="Include" />
@@ -179,11 +194,39 @@
             </e>
           </e>
         </e>
-        <e p="Scripts" t="Include">
-          <e p="SimpleCameraController.cs" t="Include" />
-        </e>
         <e p="StreamingAssets" t="Include">
           <e p="arsdk_version.txt" t="Include" />
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+            <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+            <e p="TMP_Bitmap.shader" t="Include" />
+            <e p="TMP_SDF Overlay.shader" t="Include" />
+            <e p="TMP_SDF SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+            <e p="TMP_SDF-Mobile SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface.shader" t="Include" />
+            <e p="TMP_SDF.shader" t="Include" />
+            <e p="TMP_Sprite.shader" t="Include" />
+            <e p="TMPro.cginc" t="Include" />
+            <e p="TMPro_Mobile.cginc" t="Include" />
+            <e p="TMPro_Properties.cginc" t="Include" />
+            <e p="TMPro_Surface.cginc" t="Include" />
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
         </e>
         <e p="TutorialInfo" t="Include">
           <e p="Scripts" t="Include">

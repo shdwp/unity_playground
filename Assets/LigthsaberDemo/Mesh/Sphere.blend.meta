@@ -1,71 +1,8 @@
 fileFormatVersion: 2
-guid: cd0713beb0b2adf44a000adc6215c9dd
+guid: 94913dd8a49110347b383e7f65802861
 ModelImporter:
   serializedVersion: 20101
-  internalIDToNameTable:
-  - first:
-      1: 100000
-    second: paint_1G_bucket
-  - first:
-      1: 100002
-    second: paint_1G_lid
-  - first:
-      1: 100004
-    second: paint_5G_bucket
-  - first:
-      1: 100006
-    second: //RootNode
-  - first:
-      4: 400000
-    second: paint_1G_bucket
-  - first:
-      4: 400002
-    second: paint_1G_lid
-  - first:
-      4: 400004
-    second: paint_5G_bucket
-  - first:
-      4: 400006
-    second: //RootNode
-  - first:
-      21: 2100000
-    second: plastic_white
-  - first:
-      21: 2100002
-    second: paint_5g_label
-  - first:
-      21: 2100004
-    second: metal
-  - first:
-      21: 2100006
-    second: paint_1g
-  - first:
-      23: 2300000
-    second: paint_1G_bucket
-  - first:
-      23: 2300002
-    second: paint_1G_lid
-  - first:
-      23: 2300004
-    second: paint_5G_bucket
-  - first:
-      33: 3300000
-    second: paint_1G_bucket
-  - first:
-      33: 3300002
-    second: paint_1G_lid
-  - first:
-      33: 3300004
-    second: paint_5G_bucket
-  - first:
-      43: 4300000
-    second: paint_5G_bucket
-  - first:
-      43: 4300002
-    second: paint_1G_bucket
-  - first:
-      43: 4300004
-    second: paint_1G_lid
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -103,10 +40,10 @@ ModelImporter:
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
-    importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
-    fileIdsGeneration: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -122,7 +59,7 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 0
+    secondaryUVMarginMethod: 1
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
@@ -136,7 +73,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []
@@ -155,7 +92,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
   additionalBone: 0
