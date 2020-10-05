@@ -31,10 +31,11 @@
         <e p="LigthsaberDemo" t="Include">
           <e p="Scripts" t="Include">
             <e p="BladeTrailRenderer.cs" t="Include" />
-            <e p="CuttableObjectsController.cs" t="Include" />
             <e p="DebrisController.cs" t="Include" />
-            <e p="LightsaberMouseController.cs" t="Include" />
+            <e p="LightsaberDemoLib.cs" t="Include" />
+            <e p="LightsaberMouseInputController.cs" t="Include" />
             <e p="MeshBuilder.cs" t="Include" />
+            <e p="TargetObjectsController.cs" t="Include" />
           </e>
         </e>
         <e p="MaxstAR" t="Include">

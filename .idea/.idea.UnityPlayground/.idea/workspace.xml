@@ -19,7 +19,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/5b/e4888d37/Comparison`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/CuttableObjectsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/TargetObjectsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49F4E7E7-91CC-4FFF-ACD8-8F729E2B1E4C/20/9e79d293/GeometryUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/74/b128d6d4/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49F4E7E7-91CC-4FFF-ACD8-8F729E2B1E4C/53/31d18b2e/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
@@ -28,7 +28,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/MaxstARSamples/Scripts/HomeSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/LightsaberMouseController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/LightsaberMouseInputController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49F4E7E7-91CC-4FFF-ACD8-8F729E2B1E4C/68/81060716/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49F4E7E7-91CC-4FFF-ACD8-8F729E2B1E4C/43/d861bdca/Camera.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49F4E7E7-91CC-4FFF-ACD8-8F729E2B1E4C/06/875e7ff6/Plane.cs" root0="SKIP_HIGHLIGHTING" />
@@ -37,9 +37,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/RollingDownDemo/Scripts/DrawScene/UIController.cs" />
-        <option value="$PROJECT_DIR$/Assets/RollingDownDemo/Scripts/GameplayScene/PlayerCameraController.cs" />
-        <option value="$PROJECT_DIR$/Assets/RollingDownDemo/Scripts/GameplayScene/LevelCompletedTriggerController.cs" />
         <option value="$PROJECT_DIR$/Assets/RollingDownDemo/Scripts/DrawScene/DrawSceneController.cs" />
         <option value="$PROJECT_DIR$/Assets/RollingDownDemo/Scripts/DrawScene/ScreenDrawingController.cs" />
         <option value="$PROJECT_DIR$/Assets/RollingDownDemo/Scripts/DrawScene/UserDrawingController.cs" />
@@ -83,11 +80,14 @@
         <option value="$PROJECT_DIR$/Assets/Editor/NormalsGizmo.cs" />
         <option value="$PROJECT_DIR$/Assets/Editor/NormalsVisualizer.cs" />
         <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/CuttableObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/MeshBuilder.cs" />
-        <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/LightsaberMouseController.cs" />
-        <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/DebrisController.cs" />
         <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/CuttableObjectsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/DebrisController.cs" />
+        <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/LightsaberMouseController.cs" />
+        <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/LightsaberDemoLib.cs" />
+        <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/MeshBuilder.cs" />
         <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/BladeTrailRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/LightsaberMouseInputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/LigthsaberDemo/Scripts/TargetObjectsController.cs" />
       </list>
     </option>
   </component>
@@ -152,7 +152,7 @@
       <workItem from="1601291199085" duration="7835000" />
       <workItem from="1601555306728" duration="303000" />
       <workItem from="1601728715964" duration="29471000" />
-      <workItem from="1601907247219" duration="10879000" />
+      <workItem from="1601907247219" duration="19620000" />
     </task>
     <servers />
   </component>
@@ -244,18 +244,18 @@
       <screen x="-3840" y="0" width="1920" height="1050" />
     </state>
     <state x="-3160" y="174" key="SettingsEditor/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1601907833060" />
-    <state x="-2992" y="231" width="672" height="592" key="find.popup" timestamp="1601911975380">
+    <state x="-2992" y="231" width="672" height="592" key="find.popup" timestamp="1601922372242">
       <screen x="-3840" y="0" width="1920" height="1050" />
     </state>
-    <state x="-2992" y="231" width="672" height="592" key="find.popup/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1601911975380" />
+    <state x="-2992" y="231" width="672" height="592" key="find.popup/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1601922372242" />
     <state x="-3003" y="246" key="run.anything.popup" timestamp="1601022821610">
       <screen x="-3840" y="0" width="1920" height="1050" />
     </state>
     <state x="-3003" y="246" key="run.anything.popup/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1601022821610" />
-    <state x="-2980" y="232" width="672" height="678" key="search.everywhere.popup" timestamp="1601912289996">
+    <state x="-2979" y="232" width="672" height="678" key="search.everywhere.popup" timestamp="1601926607940">
       <screen x="-3840" y="0" width="1920" height="1050" />
     </state>
-    <state x="-2980" y="232" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1601912289996" />
+    <state x="-2979" y="232" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1601926607940" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

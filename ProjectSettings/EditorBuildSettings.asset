@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MeshDrawingPhysicsDemo/Scenes/MeshDrawingGameplayScene.unity
     guid: 54a58b618c1b5714a8d58949e9df8c04
+  - enabled: 1
+    path: Assets/LigthsaberDemo/Scenes/LightsaberDemoScene.unity
+    guid: facedeaee0db2654dbe647717c8fa734
   m_configObjects: {}
