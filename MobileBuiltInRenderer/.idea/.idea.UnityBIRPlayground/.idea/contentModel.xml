@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\shdwp\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\shdwp\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_UnityBIRPlayground.912889379.00" t="ExcludeRecursive" />
+    <e p="D:\UnityProjects\UnityBIRPlayground" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="MatchTwoGame" t="Include">
+          <e p="Mats" t="Include">
+            <e p="Tile" t="Include">
+              <e p="TileMatShader.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="MatchTwoGameSceneController.cs" t="Include" />
+          </e>
+        </e>
+        <e p="SnowplowGame" t="Include">
+          <e p="Mats" t="Include">
+            <e p="Snow" t="Include">
+              <e p="SnowShader.shader" t="Include" />
+            </e>
+            <e p="SnowHeap" t="Include">
+              <e p="SnowHeapShader.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Cars" t="Include">
+              <e p="FollowerCarBehaviour.cs" t="Include" />
+              <e p="ObstacleCarBehaviour.cs" t="Include" />
+              <e p="ObstacleCarSpawner.cs" t="Include" />
+              <e p="PlowTruckController.cs" t="Include" />
+              <e p="WheelAnimationBehaviour.cs" t="Include" />
+            </e>
+            <e p="Debris" t="Include">
+              <e p="DebrisBehaviour.cs" t="Include" />
+              <e p="DebrisSpawner.cs" t="Include" />
+              <e p="DebrisTrack.cs" t="Include" />
+              <e p="DebrisTrackVisualizationGizmo.cs" t="Include" />
+            </e>
+            <e p="InputControllers" t="Include">
+              <e p="MouseInputController.cs" t="Include" />
+            </e>
+            <e p="ObjectPool" t="Include">
+              <e p="GameObjectPool.cs" t="Include" />
+            </e>
+            <e p="RoadScrolling" t="Include">
+              <e p="RoadMovementCoordinator.cs" t="Include" />
+              <e p="ScrollingMeshTilePositioner.cs" t="Include" />
+              <e p="ScrollingUVPositioner.cs" t="Include" />
+            </e>
+            <e p="ScanlineMasking" t="Include">
+              <e p="ScanlineMaskTexController.cs" t="Include" />
+              <e p="ScanlineTextureDrawing.cs" t="Include" />
+            </e>
+            <e p="SnowplowGameController.cs" t="Include" />
+            <e p="SnowplowMenuController.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="UnityBIRPlayground.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

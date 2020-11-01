@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="798812af-6e78-451d-9802-87186f319ee7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityBIRPlayground/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityBIRPlayground/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityBIRPlayground/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityBIRPlayground/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Mats/Snow/SnowMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SnowplowGame/Mats/Snow/SnowMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Mats/Snow/SnowShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SnowplowGame/Mats/Snow/SnowShader.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scenes/SnowplowGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SnowplowGame/Scenes/SnowplowGameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Cars/FollowerCarController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Cars/FollowerCarController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/InputControllers/MouseInputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/InputControllers/MouseInputController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackMasking/MaskTextureController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackMasking/MaskTextureController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackMasking/ScanlineTextureDrawing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackMasking/ScanlineTextureDrawing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackPositionCoordinator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackPositionCoordinator.cs.meta" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/DebrisTrackVisualizationGizmo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/DebrisBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BB4ED992-9FE0-4849-BBE2-B059CBA4D31F/cc/f17b05b5/Texture2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/DebrisSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SnowplowGame/Scripts/RoadScrolling/RoadMovementCoordinator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/DebrisTrack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BB4ED992-9FE0-4849-BBE2-B059CBA4D31F/c3/3f3e9eac/Bounds.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BB4ED992-9FE0-4849-BBE2-B059CBA4D31F/0d/409acb17/Camera.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BB4ED992-9FE0-4849-BBE2-B059CBA4D31F/da/6d3eeb39/TextureCreationFlags.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/ScanlineDrawing.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/MaskTextureController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/ScanlineTextureDrawing.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/ScrollingUVPositioner.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/SnowplowTruck/SnowplowTruckController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/SnowplowTruck/PlowTruckController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/SnowplowTruck/FollowerCarController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackDebris/TrackDebrisPositioner.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackDebris/TrackDebrisController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Cars/FollowerCarController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackDebris/DebriesTrack.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackScrolling/ScrollingUVPositioner.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackMasking/ScanlineTextureDrawing.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackMovementCoordinator.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Cars/FollowerCarBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Cars/ObstacleCarBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Cars/ObstacleCarSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Cars/WheelAnimationBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/InputControllers/MouseInputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackDebris/DebrisSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackDebris/DebrisTrack.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackDebris/TrackDebrisBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackDebris/TrackVisualizationGizmo.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackMasking/MaskTextureController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/ScanlineMasking/ScanlineMaskTexController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/ScanlineMasking/ScanlineTextureDrawing.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Cars/PlowTruckController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/RoadDebris/DebrisSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/RoadDebris/DebrisTrack.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/RoadDebris/TrackDebrisBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/RoadDebris/TrackVisualizationGizmo.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/RoadDebris/RoadDebrisBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/RoadDebris/DebrisTrackVisualizationGizmo.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/DebrisSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/DebrisTrack.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/RoadDebrisBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/TrackVisualizationGizmo.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/DebrisTrackVisualizationGizmo.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/DebrisBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/RoadScrolling/ScrollingUVPositioner.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/RoadScrolling/ScrollingMeshTilePositioner.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/RoadScrolling/TrackMovementCoordinator.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/RoadScrolling/RoadMovementCoordinator.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/SnowplowGameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/SnowplowMenuController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/GameObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Mats/SnowHeap/SnowHeapShader.shader" />
+        <option value="$PROJECT_DIR$/Assets/SnowplowGame/Mats/Snow/SnowShader.shader" />
+        <option value="$PROJECT_DIR$/Assets/MatchTwoGame/Mats/Tile/TileMatShader.shader" />
+        <option value="$PROJECT_DIR$/Assets/MatchTwoGame/Scripts/MatchTwoGameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/MatchTwoGame/Scripts/MatchTwoGameSceneController.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1jZMvJTRCMdslSQUX1IF6zipAB2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35027856" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30013928" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17948">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" value="17948" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="798812af-6e78-451d-9802-87186f319ee7" name="Default Changelist" comment="" />
+      <created>1604007389388</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604007389388</updated>
+      <workItem from="1604007391729" duration="16154000" />
+      <workItem from="1604072257895" duration="34823000" />
+      <workItem from="1604160784306" duration="1325000" />
+      <workItem from="1604166698016" duration="30771000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-3198" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604020132670">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-3198" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604020132670" />
+    <state x="-3756" y="274" key="#xdebugger.evaluate" timestamp="1604194085094">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-3756" y="274" key="#xdebugger.evaluate/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604194085094" />
+    <state width="1467" height="390" key="GridCell.Tab.0.bottom" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.0.bottom/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state width="1467" height="390" key="GridCell.Tab.0.center" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.0.center/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state width="1467" height="390" key="GridCell.Tab.0.left" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.0.left/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state width="1467" height="390" key="GridCell.Tab.0.right" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.0.right/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state width="1467" height="390" key="GridCell.Tab.1.bottom" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.1.bottom/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state width="1467" height="390" key="GridCell.Tab.1.center" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.1.center/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state width="1467" height="390" key="GridCell.Tab.1.left" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.1.left/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state width="1467" height="390" key="GridCell.Tab.1.right" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.1.right/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state width="1467" height="390" key="GridCell.Tab.2.bottom" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.2.bottom/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state width="1467" height="390" key="GridCell.Tab.2.center" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.2.center/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state width="1467" height="390" key="GridCell.Tab.2.left" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.2.left/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state width="1467" height="390" key="GridCell.Tab.2.right" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.2.right/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state width="1467" height="390" key="GridCell.Tab.3.bottom" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.3.bottom/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state width="1467" height="390" key="GridCell.Tab.3.center" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.3.center/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state width="1467" height="390" key="GridCell.Tab.3.left" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.3.left/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state width="1467" height="390" key="GridCell.Tab.3.right" timestamp="1604247664894">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1467" height="390" key="GridCell.Tab.3.right/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247664894" />
+    <state x="-2945" y="207" key="RiderGenerateDialog" timestamp="1604160899659">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-2945" y="207" key="RiderGenerateDialog/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604160899659" />
+    <state x="-3151" y="175" key="SettingsEditor" timestamp="1604160883655">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-3151" y="175" key="SettingsEditor/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604160883655" />
+    <state x="-2989" y="233" width="672" height="678" key="search.everywhere.popup" timestamp="1604247261652">
+      <screen x="-3840" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-2989" y="233" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-3840.0.1920.1050@-3840.0.1920.1050" timestamp="1604247261652" />
+  </component>
+</project>
