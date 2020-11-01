@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="798812af-6e78-451d-9802-87186f319ee7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityBIRPlayground/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityBIRPlayground/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityBIRPlayground/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityBIRPlayground/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Mats/Snow/SnowMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SnowplowGame/Mats/Snow/SnowMat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Mats/Snow/SnowShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SnowplowGame/Mats/Snow/SnowShader.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scenes/SnowplowGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SnowplowGame/Scenes/SnowplowGameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Cars/FollowerCarController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Cars/FollowerCarController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/InputControllers/MouseInputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/InputControllers/MouseInputController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackMasking/MaskTextureController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackMasking/MaskTextureController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackMasking/ScanlineTextureDrawing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackMasking/ScanlineTextureDrawing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackPositionCoordinator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SnowplowGame/Scripts/TrackPositionCoordinator.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,24 +29,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/DebrisTrackVisualizationGizmo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/DebrisBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BB4ED992-9FE0-4849-BBE2-B059CBA4D31F/cc/f17b05b5/Texture2D.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/DebrisSpawner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SnowplowGame/Scripts/RoadScrolling/RoadMovementCoordinator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/DebrisTrack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/DebrisTrackVisualizationGizmo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BB4ED992-9FE0-4849-BBE2-B059CBA4D31F/cc/f17b05b5/Texture2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BB4ED992-9FE0-4849-BBE2-B059CBA4D31F/c3/3f3e9eac/Bounds.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BB4ED992-9FE0-4849-BBE2-B059CBA4D31F/0d/409acb17/Camera.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SnowplowGame/Scripts/Debris/DebrisSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BB4ED992-9FE0-4849-BBE2-B059CBA4D31F/da/6d3eeb39/TextureCreationFlags.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SnowplowGame/Scripts/RoadScrolling/RoadMovementCoordinator.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -122,10 +124,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17948">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="17948" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -144,6 +146,7 @@
       <workItem from="1604072257895" duration="34823000" />
       <workItem from="1604160784306" duration="1325000" />
       <workItem from="1604166698016" duration="30771000" />
+      <workItem from="1604247900350" duration="49000" />
     </task>
     <servers />
   </component>
@@ -152,6 +155,17 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />

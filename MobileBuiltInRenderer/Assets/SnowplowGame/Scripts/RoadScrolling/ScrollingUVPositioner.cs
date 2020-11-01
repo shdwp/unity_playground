@@ -37,6 +37,7 @@ namespace SnowplowGame.Scripts.RoadScrolling
         {
             uvDistance += dist / _scrollingObjectHalfWidth * Time.deltaTime;
 
+            // @TODO: wrap uv distance in order to avoid float precision loss
             _mat.SetFloat(_sidUVDistance, uvDistance);
         }
     }
