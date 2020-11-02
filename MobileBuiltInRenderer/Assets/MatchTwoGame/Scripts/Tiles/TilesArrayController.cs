@@ -45,6 +45,7 @@ namespace MatchTwoGame.Scripts.Tiles
         {
             for (int i = 0; i < tiles.Length; i++)
             {
+                Debug.Log($"TilesArrayController: showing tile {i} in unloaded state");
                 _tileBehaviours[i].SetUnloadedState(i * 0.25f);
             }
         }
@@ -62,6 +63,7 @@ namespace MatchTwoGame.Scripts.Tiles
             {
                 if (tilePictogramMapping[i] == pictogramIdx)
                 {
+                    Debug.Log($"TilesArrayController: setting loaded state for tile {i}, with texture {pictogramTex}");
                     // set correct state with provided texture
                     _tileBehaviours[i].SetLoadedState(pictogramTex, animateLoad);
                 }

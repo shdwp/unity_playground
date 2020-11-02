@@ -8,6 +8,7 @@ namespace MatchTwoGame.Scripts.Tiles
     /// Behaviour for each tile, provides API to control it's appearance and animations
     /// </summary>
     [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(Renderer))]
     public class TileBehaviour : MonoBehaviour
     {
         private Animator _animator;

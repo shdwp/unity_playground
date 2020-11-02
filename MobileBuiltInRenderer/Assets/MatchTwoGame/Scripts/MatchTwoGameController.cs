@@ -45,9 +45,11 @@ namespace MatchTwoGame.Scripts
         private void Awake()
         {
             // create backend client and subscribe to its events
+            Debug.Log($"GameController: Instantiated BackendClient");
             _client = new BackendClient();
             _client.schemeDownloaded += list =>
             {
+                Debug.Log($"GameController: downloaded scheme {list.Count} textures");
                 // create texture cache array
                 _pictogramTextures = new Texture2D[list.Count];
                 
@@ -57,6 +59,7 @@ namespace MatchTwoGame.Scripts
             
             _client.textureDownloaded += (tex, progress) =>
             {
+                Debug.Log($"GameController: downloaded texture, {progress} left");
                 // load tiles which pictogram (according to mapping) has been loaded
                 tilesArrayController.LoadTile(progress, tex);
                 
@@ -84,6 +87,7 @@ namespace MatchTwoGame.Scripts
             _tilePictogramMapping = RandomPictogramIndexes();
             tilesArrayController.tilePictogramMapping = _tilePictogramMapping;
             
+            Debug.Log($"GameController: Starting data download coroutine");
             // start download on scene start
             StartCoroutine(_client.DataDownloadCoroutine());
         }
@@ -102,13 +106,19 @@ namespace MatchTwoGame.Scripts
         {
             if (_inputBlocked)
             {
+                Debug.Log($"GameController: User touched tile {idx}, but input was blocked");
                 return;
             }
             
             if (!_flippedTiles.Contains(idx) && !_completedTiles.Contains(idx))
             {
                 _inputBlocked = true;
+                Debug.Log($"GameController: User touched tile {idx}, starting flip coroutine");
                 StartCoroutine(TileFlippedCoroutine(idx));
+            }
+            else
+            {
+                Debug.Log($"GameController: User touched tile {idx}, but it was already flipped/completed");
             }
         }
 
@@ -121,7 +131,10 @@ namespace MatchTwoGame.Scripts
             _completedTiles.Clear();
             _flippedTiles.Clear();
             
+            Debug.Log($"GameController: Game starting, waiting 2 seconds");
             yield return new WaitForSeconds(2f);
+            
+            Debug.Log($"GameController: Game starting, flipping all tiles face down");
             yield return StartCoroutine(tilesArrayController.SetAllTilesFlipped(true));
             
             _inputBlocked = false;
@@ -134,9 +147,11 @@ namespace MatchTwoGame.Scripts
         /// <returns></returns>
         private IEnumerator GameRestart()
         {
+            Debug.Log($"GameController: Game restarting, waiting 1 second");
             // give user a "win" screen of sorts
             yield return new WaitForSeconds(1f);
             
+            Debug.Log($"GameController: Game restarting, flipping all tiles face down");
             // flip tiles face down
             yield return StartCoroutine(tilesArrayController.SetAllTilesFlipped(true));
             
@@ -144,12 +159,14 @@ namespace MatchTwoGame.Scripts
             _tilePictogramMapping = RandomPictogramIndexes();
             tilesArrayController.tilePictogramMapping = _tilePictogramMapping;
 
+            Debug.Log($"GameController: Game restarting, loading updated pictograms");
             // set correct textures according to updated mappings, skipping animation
             for (int i = 0; i < _pictogramTextures.Length; i++)
             {
                 tilesArrayController.LoadTile(i, _pictogramTextures[i], false);
             }
             
+            Debug.Log($"GameController: Game restarting, flipping tiles face up");
             // flip the tiles back on, restoring the state to the initial one before game start
             yield return StartCoroutine(tilesArrayController.SetAllTilesFlipped(false));
             
@@ -170,17 +187,20 @@ namespace MatchTwoGame.Scripts
         {
             // flip the tile, but don't wait on animation completion (for responsiveness sake)
             var flipCoroutine = StartCoroutine(tilesArrayController.FlipTile(idx));
+            Debug.Log($"GameController: flipping tile {idx}");
             
             // add tile to flipped tiles array
             _flippedTiles.Add(idx);
 
             if (_flippedTiles.Count >= 2)
             {
+                Debug.Log($"GameController: two tiles flipped, waiting for animation to complete");
                 // two cards has been flipped, wait for the second one animation to be completed
                 yield return flipCoroutine;
                 
                 if (_tilePictogramMapping[_flippedTiles[0]] == _tilePictogramMapping[_flippedTiles[1]])
                 {
+                    Debug.Log($"GameController: two tiles flipped, matching");
                     // two tiles pictograms match - add them to completed array and bump score
                     _completedTiles.AddRange(_flippedTiles);
                     _score++;
@@ -194,12 +214,14 @@ namespace MatchTwoGame.Scripts
                     }
                     else
                     {
+                        Debug.Log($"GameController: two tiles flipped, unblocking input");
                         // some tiles are not completed just yet, unblock the input
                         _inputBlocked = false;
                     }
                 }
                 else
                 {
+                    Debug.Log($"GameController: two tiles flipped, cards not matching, flipping back, unblocking input");
                     // tile pictograms don't match - flip them face down and unblock input
                     foreach (var flippedTileIdx in _flippedTiles)
                     {
@@ -214,6 +236,7 @@ namespace MatchTwoGame.Scripts
             }
             else
             {
+                Debug.Log($"GameController: one tile flipped, unblocking input");
                 // if only one tile has been flipped immediately unblock input (for responsiveness sake)
                 _inputBlocked = false;
             }
