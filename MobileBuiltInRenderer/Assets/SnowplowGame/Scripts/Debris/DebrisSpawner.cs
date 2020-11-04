@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Lib;
 using SnowplowGame.Scripts.RoadScrolling;
 using UnityEngine;
 using Random = UnityEngine.Random;
