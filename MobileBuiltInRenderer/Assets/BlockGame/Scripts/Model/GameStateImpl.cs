@@ -5,19 +5,22 @@ namespace BlockGame.Scripts.Model
 {
     public class GameStateImpl: IGameState
     {
-        [Inject] public IPartialGrid attachedGrid { get; set; }
-        [Inject] public IPartialGrid detachedGrid { get; set; }
+        [Inject] public IPartialGrid<BlockDataModel> attachedGrid { get; set; }
+        [Inject] public IPartialGrid<BlockDataModel> detachedGrid { get; set; }
 
-        public bool TestAndApplyDetachedGridCollisions()
+        public IPartialGrid<BlockDataModel> TestAndApplyDetachedGridCollisions()
         {
             if (detachedGrid.DoesCollideWith(attachedGrid))
             {
-                attachedGrid.Merge(detachedGrid);
-                return true;
+                var grid = detachedGrid;
+                grid.Translate(2, 0);
+                attachedGrid.Merge(grid);
+
+                return grid;
             }
             else
             {
-                return false;
+                return null;
             }
         }
         

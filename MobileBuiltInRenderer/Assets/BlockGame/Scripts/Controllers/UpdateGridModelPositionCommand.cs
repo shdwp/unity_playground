@@ -1,5 +1,7 @@
-﻿using BlockGame.Scripts.Model;
+﻿using BlockGame.Scripts.Controllers.ToGridView;
+using BlockGame.Scripts.Model;
 using BlockGame.Scripts.Model.Interfaces;
+using BlockGame.Scripts.Signals.ToGridView;
 using strange.extensions.command.impl;
 using strange.extensions.context.impl;
 using strange.extensions.signal.impl;
@@ -14,11 +16,23 @@ namespace BlockGame.Scripts.Controllers
         
         [Inject] public IGameState state { get; set; }
         [Inject] public IGridTransform transform { get; set; }
+        [Inject] public ToGridViewComponent toGridView { get; set; }
         
         public override void Execute()
         {
-            var gridPos = transform.WorldToGrid(pos);
-            Debug.Log(gridPos);
+            if (type != GridType.Detached)
+            {
+                Debug.LogError($"Invalid grid type for UpdateGridModelPositionCommand, only supported for Detached");
+                return;
+            }
+            
+            state.detachedGrid.Rebase(transform.WorldToGrid(pos));
+
+            var grid = state.TestAndApplyDetachedGridCollisions();
+            if (grid != null)
+            {
+                toGridView.DispatchMergeGrid(GridType.Attached, grid);
+            }
         }
     }
 }

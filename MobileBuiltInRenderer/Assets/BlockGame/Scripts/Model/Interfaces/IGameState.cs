@@ -1,16 +1,7 @@
-﻿namespace BlockGame.Scripts.Model.Interfaces
-{
-    public enum BlockColor
-    {
-        Red,
-        Green,
-        Yellow,
-        Orange,
-        Blue,
-        Cyan,
-        Purple,
-    }
+﻿using System;
 
+namespace BlockGame.Scripts.Model.Interfaces
+{
     public enum GridType
     {
         Attached,
@@ -19,9 +10,9 @@
         
     public interface IGameState
     {
-        IPartialGrid attachedGrid { get; set; }
-        IPartialGrid detachedGrid { get; set; }
+        IPartialGrid<BlockDataModel> attachedGrid { get; set; }
+        IPartialGrid<BlockDataModel> detachedGrid { get; set; }
 
-        bool TestAndApplyDetachedGridCollisions();
+        IPartialGrid<BlockDataModel> TestAndApplyDetachedGridCollisions();
     }
 }

@@ -8,8 +8,8 @@ namespace BlockGame.Scripts.Model
 {
     public class GridTransformImpl: IGridTransform
     {
-        public int cols { get; }
-        public int rows { get; }
+        public int cols => _cols;
+        public int rows => _rows;
         
         private Bounds _bounds;
         private int _rows;
@@ -22,9 +22,9 @@ namespace BlockGame.Scripts.Model
             _cols = cols;
         }
 
-        public IEnumerable<Vector3> TransformGridToWorldPoints(IPartialGrid grid)
+        public IEnumerable<Vector3> TransformGridToWorldPoints<T>(IPartialGrid<T> grid) where T: IEquatable<T>
         {
-            return grid.Select(a => GridToWorld(a));
+            return grid.Select(a => GridToWorld(a.pos));
         }
         
         public GridPosition WorldToGrid(Vector3 pos)
@@ -38,13 +38,23 @@ namespace BlockGame.Scripts.Model
 
         public Vector3 GridToWorld(GridPosition pos)
         {
+            return GridToWorld(pos.row, pos.col);
+        }
+
+        public Vector3 GridToWorld(float row, float col)
+        {
             return new Vector3(
-                Mathf.Lerp(_bounds.min.x, _bounds.max.x, Mathf.InverseLerp(0, _rows, pos.row)),
-                Mathf.Lerp(_bounds.max.y, _bounds.min.y, Mathf.InverseLerp(0, _cols, pos.col))
+                Mathf.Lerp(_bounds.min.x, _bounds.max.x, Mathf.InverseLerp(0, _rows, row)),
+                Mathf.Lerp(_bounds.max.y, _bounds.min.y, Mathf.InverseLerp(0, _cols, col))
             );
         }
 
-        public GridPosition Clamp(GridPosition pos, int[,] data)
+        public Vector3 GridWorldCentroid<T>(IPartialGrid<T> grid) where T : IEquatable<T>
+        {
+            return GridToWorld((float) grid.rows / 2f, (float) grid.cols / 2f);
+        }
+
+        public GridPosition Clamp<T>(GridPosition pos, T[,] data) where T: IEquatable<T>
         {
             var minRow = Int32.MinValue;
             var minCol = Int32.MinValue;
@@ -55,7 +65,7 @@ namespace BlockGame.Scripts.Model
             {
                 for (int col = 0; col < data.GetLength(1); col++)
                 {
-                    if (data[row, col] > 0)
+                    if (!data[row, col].Equals(default))
                     {
                         minCol = Math.Max(minRow, -col);
                         maxCol = Math.Min(maxCol, -col);

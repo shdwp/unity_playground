@@ -1,4 +1,5 @@
 ﻿using BlockGame.Scripts.Controllers;
+using BlockGame.Scripts.Controllers.ToGridView;
 using BlockGame.Scripts.Model;
 using BlockGame.Scripts.Model.Interfaces;
 using BlockGame.Scripts.Signals;
@@ -40,16 +41,20 @@ namespace BlockGame.Scripts
 
         private void BindModels()
         {
-            injectionBinder.Bind<IPartialGrid>().To<PartialGridImpl>();
+            injectionBinder.Bind<IPartialGrid<BlockDataModel>>().To<PartialGridImpl<BlockDataModel>>();
+            
             injectionBinder.Bind<IGameState>().To<GameStateImpl>().ToSingleton();
             injectionBinder.Bind<IGridTransform>().To<GridTransformImpl>().ToSingleton();
+
+            injectionBinder.Bind<ToGridViewComponent>().ToSingleton();
         }
 
         private void BindSignals()
         {
             injectionBinder.Bind<SetupInitialGameStateSignal>().ToSingleton();
             injectionBinder.Bind<UpdateGridModelPositionSignal>().ToSingleton();
-            injectionBinder.Bind<ReplaceGridInViewSignal>().ToSingleton();
+            injectionBinder.Bind<ReplaceGridInViewSignal<BlockDataModel>>().ToSingleton();
+            injectionBinder.Bind<MergeGridInViewSignal<BlockDataModel>>().ToSingleton();
             injectionBinder.Bind<SetupGridTransformSignal>().ToSingleton();
             injectionBinder.Bind<PlayerMoveDetachedGridSignal>().ToSingleton();
         }
@@ -63,7 +68,7 @@ namespace BlockGame.Scripts
             mediationBinder.BindView<GridTransformView>().ToMediator<GridTransformViewMediator>();
             
             mediationBinder.BindView<DetachedGridView>().ToMediator<DetachedGridViewMediator>();
-            mediationBinder.BindView<AttachedGridView>().ToMediator<GridViewMediator>();
+            mediationBinder.BindView<AttachedGridView>().ToMediator<AttachedGridViewMediator>();
         }
 
         private void BindCommands()

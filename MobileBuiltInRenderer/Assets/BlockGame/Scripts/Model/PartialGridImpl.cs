@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using BlockGame.Scripts.Model.Interfaces;
@@ -6,23 +7,22 @@ using UnityEngine;
 
 namespace BlockGame.Scripts.Model
 {
-    public class PartialGridImpl: IPartialGrid
+    public class PartialGridImpl<TData>: IPartialGrid<TData> where TData: IEquatable<TData>
     {
         public GridPosition pos => _pos;
-        
+
+        public int rows => _rows;
+        public int cols => _cols;
+
         [Inject] public IGridTransform transform { get; set; }
         
         private GridPosition _pos;
         private int _rows, _cols;
-        private int[,] _data;
-        
-        public PartialGridImpl()
-        {
-        }
+        private TData[,] _data;
 
-        public void Setup3x3(string format)
+        public void Setup3x3(TData data, string format)
         {
-            _data = new int[3,3];
+            _data = new TData[3,3];
             _rows = 3;
             _cols = 3;
             
@@ -33,36 +33,45 @@ namespace BlockGame.Scripts.Model
                     var ch = format[(col * 3) + row];
                     if (ch != ' ')
                     {
-                        _data[row, col] = 1;
+                        _data[row, col] = data;
                     }
                 }
             }
         }
 
-        public void SetupFloor()
+        public void SetupFullFieldWithFloor(TData data)
         {
-            _data = new int[transform.rows, 1];
+            _data = new TData[transform.rows, transform.cols];
             _rows = transform.rows;
-            _cols = 1;
+            _cols = transform.cols;
+            _pos = new GridPosition(0, 0);
 
             for (int row = 0; row < _rows; row++)
             {
-                _data[row, 0] = 1;
+                for (int col = 0; col < _cols; col++)
+                {
+                    if (col == _cols - 1)
+                    {
+                        _data[row, col] = data;
+                    }
+                    else
+                    {
+                        _data[row, col] = default;
+                    }
+                }
             }
-            
-            _pos = new GridPosition(0, _rows - 1);
         }
 
         public bool IsPositionOccupied(GridPosition pos)
         {
-            return _data[pos.row, pos.col] > 0;
+            return !_data[pos.row, pos.col].Equals(default);
         }
 
-        public bool DoesCollideWith(IPartialGrid other)
+        public bool DoesCollideWith(IPartialGrid<TData> other)
         {
-            foreach (var occupied in this)
+            foreach (var cell in this)
             {
-                if (other.IsPositionOccupied(occupied))
+                if (other.IsPositionOccupied(cell.pos))
                 {
                     return true;
                 }
@@ -71,11 +80,11 @@ namespace BlockGame.Scripts.Model
             return false;
         }
 
-        public void Merge(IPartialGrid other)
+        public void Merge(IPartialGrid<TData> other)
         {
-            foreach (var pos in other)
+            foreach (var cell in other)
             {
-                _data[pos.row, pos.col] = 1;
+                _data[cell.pos.row, cell.pos.col] = cell.data;
             }
         }
         
@@ -87,19 +96,25 @@ namespace BlockGame.Scripts.Model
             _pos = transform.Clamp(_pos, _data);
         }
 
+        public void Rebase(GridPosition pos)
+        {
+            _pos = pos;
+        }
+
         public void Rotate(GridRotationDirection dir)
         {
         }
 
-        public IEnumerator<GridPosition> GetEnumerator()
+        public IEnumerator<GridCell<TData>> GetEnumerator()
         {
             for (int row = 0; row < _rows; row++)
             {
                 for (int col = 0; col < _cols; col++)
                 {
-                    if (_data[row, col] > 0)
+                    var data = _data[row, col];
+                    if (!data.Equals(default))
                     {
-                        yield return new GridPosition(row + pos.row, col + pos.row);
+                        yield return new GridCell<TData>(row + pos.row, col + pos.row, data);
                     }
                 }
             }

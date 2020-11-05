@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace BlockGame.Scripts.Model.Interfaces
 {
@@ -7,16 +8,21 @@ namespace BlockGame.Scripts.Model.Interfaces
         CW, CCW
     }
     
-    public interface IPartialGrid: IEnumerable<GridPosition>
+    public interface IPartialGrid<TData>: IEnumerable<GridCell<TData>> where TData: IEquatable<TData>
     {
         GridPosition pos { get; }
+        int rows { get; }
+        int cols { get; }
 
         bool IsPositionOccupied(GridPosition pos);
-        bool DoesCollideWith(IPartialGrid other);
-        
-        void Setup3x3(string format);
-        void SetupFloor();
+        bool DoesCollideWith(IPartialGrid<TData> other);
+
+        void Setup3x3(TData data, string format);
+        void SetupFullFieldWithFloor(TData data);
+
+        void Rebase(GridPosition pos);
         void Translate(int y, int x);
-        void Merge(IPartialGrid other);
+        
+        void Merge(IPartialGrid<TData> other);
     }
 }

@@ -14,11 +14,15 @@
             <e p="BlockGameContext.cs" t="Include" />
             <e p="BlockGameContextView.cs" t="Include" />
             <e p="Controllers" t="Include">
-              <e p="InitialGameSetupCommand.cs" t="Include" />
               <e p="SetupGridTransformCommand.cs" t="Include" />
+              <e p="ToGridView" t="Include">
+                <e p="InitialGameSetupCommand.cs" t="Include" />
+                <e p="ToGridViewComponent.cs" t="Include" />
+              </e>
               <e p="UpdateGridModelPositionCommand.cs" t="Include" />
             </e>
             <e p="model" t="Include">
+              <e p="BlockDataModel.cs" t="Include" />
               <e p="GameStateImpl.cs" t="Include" />
               <e p="GridTransformImpl.cs" t="Include" />
               <e p="Interfaces" t="Include">
@@ -50,10 +54,10 @@
               </e>
               <e p="Grid" t="Include">
                 <e p="AttachedGridView.cs" t="Include" />
+                <e p="AttachedGridViewMediator.cs" t="Include" />
                 <e p="DetachedGridView.cs" t="Include" />
                 <e p="DetachedGridViewMediator.cs" t="Include" />
                 <e p="GridView.cs" t="Include" />
-                <e p="GridViewMediator.cs" t="Include" />
                 <e p="Transform" t="Include">
                   <e p="GridTransformView.cs" t="Include" />
                   <e p="GridTransformViewMediator.cs" t="Include" />

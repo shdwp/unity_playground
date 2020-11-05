@@ -5,7 +5,7 @@ using strange.extensions.signal.impl;
 
 namespace BlockGame.Scripts.Signals.ToGridView
 {
-    public class MergeGridInViewSignal: BaseToGridViewSignal
+    public class MergeGridInViewSignal<T>: BaseToGridViewSignal<T>
     {
         
     }

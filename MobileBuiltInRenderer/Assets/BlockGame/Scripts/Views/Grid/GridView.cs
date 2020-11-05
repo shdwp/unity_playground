@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using BlockGame.Scripts.Model;
 using BlockGame.Scripts.Model.Interfaces;
+using BlockGame.Scripts.Signals.ToGridView;
 using Lib;
 using SnowplowGame.Scripts;
 using strange.extensions.mediation.impl;
@@ -13,9 +14,17 @@ namespace BlockGame.Scripts.Views.Grid
 {
     public abstract class GridView : View
     {
-        public float moveSpeed;
-        public float pushSpeed;
-        public float fallSpeed;
+        public struct BlockViewItem
+        {
+            public Vector3 pos;
+            public Color color;
+
+            public BlockViewItem(Vector3 pos, Color color)
+            {
+                this.pos = pos;
+                this.color = color;
+            }
+        }
         
         public abstract GridType GridType { get; }
 
@@ -23,35 +32,29 @@ namespace BlockGame.Scripts.Views.Grid
 
         [Inject] public GameObjectPool pool { get; set; }
 
-        public void Setup(IEnumerable<Vector3> positionsEnumerable, Color color)
+        public void Setup(Vector3 centroid, IEnumerable<BlockViewItem> enumerable)
         {
-            var positions = positionsEnumerable.ToArray();
-            var center = positions.Aggregate((a, b) => a + b) / positions.Length;
+            transform.position = centroid;
             
-            foreach (var pos in positions)
+            foreach (var item in enumerable)
             {
-                var instance = pool.Dequeue(transform);
-                var localPos = pos - center;
-                instance.transform.position = new Vector3(localPos.x, localPos.y, 0f);
+                SetupBlockViewWithItem(item);
             }
-
-            transform.position = new Vector3(center.x, center.y, transform.position.z);
         }
 
-        public void Move(Vector3 direction)
+        public void Merge(Vector3 centroid, IEnumerable<BlockViewItem> enumerable)
         {
-            transform.position += direction * (moveSpeed * Time.deltaTime);
+            foreach (var item in enumerable)
+            {
+                SetupBlockViewWithItem(item);
+            }
         }
 
-        public void Push()
+        private void SetupBlockViewWithItem(BlockViewItem item)
         {
-            transform.position += Vector3.down * (pushSpeed * Time.deltaTime);
-        }
-
-        private void Update()
-        {
-            transform.position += Vector3.down * (Time.deltaTime * fallSpeed);
-            positionUpdate.Dispatch(transform.position);
+            var instance = pool.Dequeue(transform);
+            var localPos = item.pos - transform.position;
+            instance.transform.position = new Vector3(localPos.x, localPos.y, 0f);
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace BlockGame.Scripts.Signals.ToGridView
 {
-    public class ReplaceGridInViewSignal: BaseToGridViewSignal
+    public class ReplaceGridInViewSignal<T>: BaseToGridViewSignal<T>
     {
         
     }
