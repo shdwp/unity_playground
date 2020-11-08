@@ -3,7 +3,7 @@ using BlockGame.Scripts.Model.Interfaces;
 using strange.extensions.signal.impl;
 using UnityEngine;
 
-namespace BlockGame.Scripts.Signals.ToGridView
+namespace BlockGame.Scripts.Signals.ToView
 {
     public struct BaseToGridViewData<T>
     {

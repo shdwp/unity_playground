@@ -36,7 +36,16 @@ namespace Lib
         public GameObject Dequeue(Transform parent = null)
         {
             GameObject instance;
-            instance = _freeInstances.Count > 0 ? _freeInstances.Dequeue() : GameObject.Instantiate(_prefab, parent);
+
+            if (_freeInstances.Count == 0)
+            {
+                instance = GameObject.Instantiate(_prefab, parent);
+            }
+            else
+            {
+                instance = _freeInstances.Dequeue();
+                instance.transform.SetParent(parent);
+            }
             
             _activeInstances.Add(instance);
             instance.SetActive(true);
@@ -50,9 +59,12 @@ namespace Lib
         /// <param name="instance"></param>
         public void Free(GameObject instance)
         {
-            instance.SetActive(false);
-            _freeInstances.Enqueue(instance);
-            _activeInstances.Remove(instance);
+            if (instance.activeSelf)
+            {
+                instance.SetActive(false);
+                _freeInstances.Enqueue(instance);
+                _activeInstances.Remove(instance);
+            }
         }
 
         /// <summary>

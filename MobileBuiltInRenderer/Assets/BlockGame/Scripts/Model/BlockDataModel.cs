@@ -6,6 +6,7 @@ namespace BlockGame.Scripts.Model
     {
         public enum Color
         {
+            Empty,
             Red,
             Green,
             Yellow,
@@ -16,6 +17,15 @@ namespace BlockGame.Scripts.Model
         }
 
         public Color color;
+        public static Color[] ALL_COLORS = {
+            Color.Red,
+            Color.Green,
+            Color.Yellow,
+            Color.Orange,
+            Color.Blue,
+            Color.Cyan,
+            Color.Purple
+        };
 
         public BlockDataModel(Color color)
         {
@@ -37,5 +47,4 @@ namespace BlockGame.Scripts.Model
             return (int)color;
         }
     }
-
 }

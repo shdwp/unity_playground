@@ -1,6 +1,6 @@
 ﻿using strange.extensions.signal.impl;
 
-namespace BlockGame.Scripts.Signals
+namespace BlockGame.Scripts.Views.Signals
 {
     public class PlayerMoveDetachedGridSignal: Signal<PlayerMoveDetachedGridSignal.Direction>
     {

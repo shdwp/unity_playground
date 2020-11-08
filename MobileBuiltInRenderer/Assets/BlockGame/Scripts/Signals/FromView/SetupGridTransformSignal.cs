@@ -1,7 +1,7 @@
 ﻿using strange.extensions.signal.impl;
 using UnityEngine;
 
-namespace BlockGame.Scripts.Signals
+namespace BlockGame.Scripts.Signals.FromView
 {
     public class SetupGridTransformSignal: Signal<Bounds, SetupGridTransformSignal.GridSize>
     {

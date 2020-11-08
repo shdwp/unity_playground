@@ -25,6 +25,7 @@ namespace BlockGame.Scripts.Model
             _data = new TData[3,3];
             _rows = 3;
             _cols = 3;
+            _pos = new GridPosition(0, 0);
             
             for (int row = 0; row < 3; row++)
             {
@@ -39,7 +40,7 @@ namespace BlockGame.Scripts.Model
             }
         }
 
-        public void SetupFullFieldWithFloor(TData data)
+        public void SetupEmptyFromTransform()
         {
             _data = new TData[transform.rows, transform.cols];
             _rows = transform.rows;
@@ -50,33 +51,38 @@ namespace BlockGame.Scripts.Model
             {
                 for (int col = 0; col < _cols; col++)
                 {
-                    if (col == _cols - 1)
-                    {
-                        _data[row, col] = data;
-                    }
-                    else
-                    {
-                        _data[row, col] = default;
-                    }
+                    _data[row, col] = default;
                 }
             }
         }
-
+        
         public bool IsPositionOccupied(GridPosition pos)
         {
-            return !_data[pos.row, pos.col].Equals(default);
+            var data = default(TData);
+            if (pos.row < _data.GetLength(0) && pos.col < _data.GetLength(1))
+            {
+                return !EqualityComparer<TData>.Default.Equals(_data[pos.row, pos.col], default);
+            }
+            else if (pos.row >= 0 && pos.col >= 0)
+            {
+                return false;
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("pos", "called with negative GridPosition");
+            }
         }
 
         public bool DoesCollideWith(IPartialGrid<TData> other)
         {
-            foreach (var cell in this)
+            foreach (var cell in other)
             {
-                if (other.IsPositionOccupied(cell.pos))
+                if (IsPositionOccupied(cell.pos))
                 {
                     return true;
                 }
             }
-
+            
             return false;
         }
 
@@ -88,10 +94,10 @@ namespace BlockGame.Scripts.Model
             }
         }
         
-        public void Translate(int y, int x)
+        public void Translate(int x, int y)
         {
-            _pos.col += y;
             _pos.row += x;
+            _pos.col += y;
 
             _pos = transform.Clamp(_pos, _data);
         }
@@ -105,18 +111,47 @@ namespace BlockGame.Scripts.Model
         {
         }
 
+        public void RemoveCol(int colToRemove)
+        {
+            int newColIdx;
+            var newData = new TData[transform.rows, transform.cols];
+            
+            for (int row = 0; row < _rows; row++)
+            {
+                newColIdx = _cols - 1;
+                for (int col = _cols - 1; col >= 0; col--)
+                {
+                    if (col != colToRemove)
+                    {
+                        newData[row, newColIdx] = _data[row, col];
+                        newColIdx--;
+                    }
+                }
+            }
+
+            _data = newData;
+        }
+
         public IEnumerator<GridCell<TData>> GetEnumerator()
+        {
+            for (int col = 0; col < _cols; col++)
+            {
+                for (int row = 0; row < _rows; row++)
+                {
+                    var data = _data[row, col];
+                    if (!EqualityComparer<TData>.Default.Equals(data, default))
+                    {
+                        yield return new GridCell<TData>(row + pos.row, col + pos.col, data);
+                    }
+                }
+            }
+        }
+
+        public IEnumerable<bool> EnumerateOccupancyOverRow(int colIdx)
         {
             for (int row = 0; row < _rows; row++)
             {
-                for (int col = 0; col < _cols; col++)
-                {
-                    var data = _data[row, col];
-                    if (!data.Equals(default))
-                    {
-                        yield return new GridCell<TData>(row + pos.row, col + pos.row, data);
-                    }
-                }
+                yield return !EqualityComparer<TData>.Default.Equals(_data[row, colIdx], default);
             }
         }
 

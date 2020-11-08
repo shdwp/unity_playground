@@ -1,7 +1,7 @@
 ﻿using strange.extensions.mediation.impl;
 using UnityEngine;
 
-namespace BlockGame.Scripts.Views.Grid
+namespace BlockGame.Scripts.Views.GridTransform
 {
     public class GridTransformView: View
     {

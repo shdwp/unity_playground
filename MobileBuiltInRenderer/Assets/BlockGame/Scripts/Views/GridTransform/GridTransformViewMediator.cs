@@ -1,7 +1,8 @@
 ﻿using BlockGame.Scripts.Signals;
+using BlockGame.Scripts.Signals.FromView;
 using strange.extensions.mediation.impl;
 
-namespace BlockGame.Scripts.Views.Grid
+namespace BlockGame.Scripts.Views.GridTransform
 {
     public class GridTransformViewMediator: Mediator
     {

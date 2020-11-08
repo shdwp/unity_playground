@@ -13,6 +13,10 @@ namespace BlockGame.Scripts.Model.Interfaces
         IPartialGrid<BlockDataModel> attachedGrid { get; set; }
         IPartialGrid<BlockDataModel> detachedGrid { get; set; }
 
-        IPartialGrid<BlockDataModel> TestAndApplyDetachedGridCollisions();
+        void SetupInitialAttachedGrid();
+        bool TestGridsCollision();
+        void MergeDetachedGrid();
+        void SpawnNewDetachedGrid();
+        bool RemoveCompletedRowsIfNeeded();
     }
 }

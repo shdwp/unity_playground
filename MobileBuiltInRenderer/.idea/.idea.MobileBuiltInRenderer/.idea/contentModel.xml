@@ -14,34 +14,44 @@
             <e p="BlockGameContext.cs" t="Include" />
             <e p="BlockGameContextView.cs" t="Include" />
             <e p="Controllers" t="Include">
-              <e p="SetupGridTransformCommand.cs" t="Include" />
-              <e p="ToGridView" t="Include">
+              <e p="FromView" t="Include">
+                <e p="AttemptGridModelMoveCommand.cs" t="Include" />
+                <e p="SetupGridTransformCommand.cs" t="Include" />
+              </e>
+              <e p="ToView" t="Include">
                 <e p="InitialGameSetupCommand.cs" t="Include" />
                 <e p="ToGridViewComponent.cs" t="Include" />
               </e>
-              <e p="UpdateGridModelPositionCommand.cs" t="Include" />
             </e>
             <e p="model" t="Include">
               <e p="BlockDataModel.cs" t="Include" />
               <e p="GameStateImpl.cs" t="Include" />
+              <e p="GridSpawners" t="Include">
+                <e p="BaseRandomSpawnerImpl.cs" t="Include" />
+                <e p="GrabBagSpawnerImpl.cs" t="Include" />
+                <e p="SpecificFiguresSpawnerImpl.cs" t="Include" />
+                <e p="TrueRandomSpawnerImpl.cs" t="Include" />
+              </e>
               <e p="GridTransformImpl.cs" t="Include" />
               <e p="Interfaces" t="Include">
                 <e p="IGameState.cs" t="Include" />
+                <e p="IGridSpawner.cs" t="Include" />
                 <e p="IGridTransform.cs" t="Include" />
                 <e p="IPartialGrid.cs" t="Include" />
               </e>
               <e p="PartialGridImpl.cs" t="Include" />
             </e>
             <e p="Signals" t="Include">
-              <e p="PlayerMoveDetachedGridSignal.cs" t="Include" />
-              <e p="SetupGridTransformSignal.cs" t="Include" />
+              <e p="FromView" t="Include">
+                <e p="AttemptGridModelMoveSignal.cs" t="Include" />
+                <e p="SetupGridTransformSignal.cs" t="Include" />
+              </e>
               <e p="SetupInitialGameStateSignal.cs" t="Include" />
-              <e p="ToGridView" t="Include">
+              <e p="ToView" t="Include">
                 <e p="BaseToGridViewSignal.cs" t="Include" />
                 <e p="MergeGridInViewSignal.cs" t="Include" />
                 <e p="ReplaceGridInViewSignal.cs" t="Include" />
               </e>
-              <e p="UpdateGridModelPositionSignal.cs" t="Include" />
             </e>
             <e p="Views" t="Include">
               <e p="Block" t="Include">
@@ -58,10 +68,13 @@
                 <e p="DetachedGridView.cs" t="Include" />
                 <e p="DetachedGridViewMediator.cs" t="Include" />
                 <e p="GridView.cs" t="Include" />
-                <e p="Transform" t="Include">
-                  <e p="GridTransformView.cs" t="Include" />
-                  <e p="GridTransformViewMediator.cs" t="Include" />
-                </e>
+              </e>
+              <e p="GridTransform" t="Include">
+                <e p="GridTransformView.cs" t="Include" />
+                <e p="GridTransformViewMediator.cs" t="Include" />
+              </e>
+              <e p="Signals" t="Include">
+                <e p="PlayerMoveDetachedGridSignal.cs" t="Include" />
               </e>
             </e>
           </e>

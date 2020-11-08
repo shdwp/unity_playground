@@ -1,9 +1,10 @@
 ﻿using BlockGame.Scripts.Model.Interfaces;
 using BlockGame.Scripts.Signals;
+using BlockGame.Scripts.Signals.FromView;
 using strange.extensions.command.impl;
 using UnityEngine;
 
-namespace BlockGame.Scripts.Controllers
+namespace BlockGame.Scripts.Controllers.FromView
 {
     public class SetupGridTransformCommand: Command
     {

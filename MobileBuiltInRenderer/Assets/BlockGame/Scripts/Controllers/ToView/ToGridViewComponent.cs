@@ -3,8 +3,9 @@ using System.Linq;
 using BlockGame.Scripts.Model;
 using BlockGame.Scripts.Model.Interfaces;
 using BlockGame.Scripts.Signals.ToGridView;
+using BlockGame.Scripts.Signals.ToView;
 
-namespace BlockGame.Scripts.Controllers.ToGridView
+namespace BlockGame.Scripts.Controllers.ToView
 {
     public class ToGridViewComponent
     {
@@ -15,12 +16,12 @@ namespace BlockGame.Scripts.Controllers.ToGridView
 
         public void DispatchReplaceGrid(GridType type, IPartialGrid<BlockDataModel> grid)
         {
-            replaceGridInView.Dispatch(type, transform.GridWorldCentroid(grid), MapToViewData(grid));
+            replaceGridInView.Dispatch(type, transform.GridToWorld(grid.pos), MapToViewData(grid));
         }
         
         public void DispatchMergeGrid(GridType type, IPartialGrid<BlockDataModel> grid)
         {
-            mergeGridInView.Dispatch(type, transform.GridWorldCentroid(grid), MapToViewData(grid));
+            mergeGridInView.Dispatch(type, transform.GridToWorld(grid.pos), MapToViewData(grid));
         }
 
         private IEnumerable<BaseToGridViewData<T>> MapToViewData<T>(IEnumerable<GridCell<T>> input)

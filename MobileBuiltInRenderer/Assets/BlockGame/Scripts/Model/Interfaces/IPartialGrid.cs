@@ -18,11 +18,14 @@ namespace BlockGame.Scripts.Model.Interfaces
         bool DoesCollideWith(IPartialGrid<TData> other);
 
         void Setup3x3(TData data, string format);
-        void SetupFullFieldWithFloor(TData data);
+        void SetupEmptyFromTransform();
 
         void Rebase(GridPosition pos);
         void Translate(int y, int x);
+        void RemoveCol(int colToRemove);
         
         void Merge(IPartialGrid<TData> other);
+
+        IEnumerable<bool> EnumerateOccupancyOverRow(int colIdx);
     }
 }

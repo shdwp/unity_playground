@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace BlockGame.Scripts.Views.Block
 {
-    [RequireComponent(typeof(Renderer))]
     public class BlockView : View
     {
         public float uvOffset
@@ -18,6 +17,7 @@ namespace BlockGame.Scripts.Views.Block
         }
 
         private Renderer _renderer;
+        private Light _light;
         private float _uvOffset;
         private MaterialPropertyBlock _matBlock;
 
@@ -26,7 +26,14 @@ namespace BlockGame.Scripts.Views.Block
         protected override void Awake()
         {
             _renderer = GetComponentInChildren<Renderer>();
+            _light = GetComponentInChildren<Light>();
             _matBlock = new MaterialPropertyBlock();
+        }
+
+        public void Setup(Color color)
+        {
+            uvOffset = Random.Range(0f, 1f);
+            _light.color = color;
         }
     }
 }

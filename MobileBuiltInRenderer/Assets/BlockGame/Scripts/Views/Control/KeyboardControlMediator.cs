@@ -1,4 +1,5 @@
 ﻿using BlockGame.Scripts.Signals;
+using BlockGame.Scripts.Views.Signals;
 using strange.extensions.mediation.impl;
 using UnityEngine;
 

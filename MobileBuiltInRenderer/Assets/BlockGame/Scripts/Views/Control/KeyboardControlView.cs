@@ -34,5 +34,10 @@ namespace BlockGame.Scripts.Views.Control
                 directionKeyPressed.Dispatch(Direction.Down);
             }
         }
+
+        private void OnEnable()
+        {
+            Camera.main.depthTextureMode = DepthTextureMode.Depth;
+        }
     }
 }
