@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using BlockGame.Scripts.Model.Interfaces;
 
 namespace BlockGame.Scripts.Model.GridSpawners
 {
@@ -6,6 +7,8 @@ namespace BlockGame.Scripts.Model.GridSpawners
     {
         protected override int SeedMin => 0;
         protected override int SeedMax => _grabBag.Count - 1;
+
+        public override GridSpawnerType type => GridSpawnerType.GrabBag;
 
         private List<string> _grabBag;
         

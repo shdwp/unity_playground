@@ -132,6 +132,43 @@ namespace BlockGame.Scripts.Model
             _data = newData;
         }
 
+        public void StoreData(out TData[] array, out int rows, out int cols, out GridPosition pos)
+        {
+            rows = _rows;
+            cols = _cols;
+            pos = _pos;
+            
+            array = new TData[_cols * _rows];
+            
+            var i = 0;
+            for (int row = 0; row < _rows; row++)
+            {
+                for (int col = 0; col < _cols; col++)
+                {
+                    array[i] = _data[row, col];
+                    i++;
+                }
+            }
+        }
+
+        public void RestoreData(TData[] array, int rows, int cols, GridPosition pos)
+        {
+            _data = new TData[rows, cols];
+            _rows = rows;
+            _cols = cols;
+            _pos = pos;
+
+            var i = 0;
+            for (int row = 0; row < _rows; row++)
+            {
+                for (int col = 0; col < _cols; col++)
+                {
+                    _data[row, col] = array[i];
+                    i++;
+                }
+            }
+        }
+
         public IEnumerator<GridCell<TData>> GetEnumerator()
         {
             for (int col = 0; col < _cols; col++)

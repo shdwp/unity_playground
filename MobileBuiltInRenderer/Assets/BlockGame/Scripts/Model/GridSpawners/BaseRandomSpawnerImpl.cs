@@ -12,6 +12,8 @@ namespace BlockGame.Scripts.Model.GridSpawners
     {
         [Inject] public IInjectionBinder binder { get; set; }
         
+        public abstract GridSpawnerType type { get; }
+        
         protected abstract int SeedMin { get; }
         protected abstract int SeedMax { get; }
 

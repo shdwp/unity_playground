@@ -2,6 +2,7 @@
 
 namespace BlockGame.Scripts.Model
 {
+    [Serializable]
     public struct BlockDataModel: IEquatable<BlockDataModel>
     {
         public enum Color

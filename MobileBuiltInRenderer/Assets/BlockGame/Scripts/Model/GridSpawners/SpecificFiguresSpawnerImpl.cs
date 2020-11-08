@@ -9,6 +9,8 @@ namespace BlockGame.Scripts.Model.GridSpawners
     {
         [Inject] public IInjectionBinder binder { get; set; }
 
+        public GridSpawnerType type => GridSpawnerType.SpecificFigures;
+
         private int _figureIdx = 0;
         
         private string[] _figures =

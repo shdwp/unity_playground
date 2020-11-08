@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace BlockGame.Scripts.Model.Interfaces
 {
+    [Serializable]
     public struct GridPosition: IEquatable<GridPosition>
     {
         public int row, col;

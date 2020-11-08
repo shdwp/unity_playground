@@ -11,20 +11,29 @@
             <e p="BlockShader.shader" t="Include" />
           </e>
           <e p="Scripts" t="Include">
-            <e p="BlockGameContext.cs" t="Include" />
-            <e p="BlockGameContextView.cs" t="Include" />
+            <e p="Contexts" t="Include">
+              <e p="BlockGameContext.cs" t="Include" />
+              <e p="BlockGameContextView.cs" t="Include" />
+              <e p="BlockGameMenuContext.cs" t="Include" />
+              <e p="BlockGameMenuContextView.cs" t="Include" />
+            </e>
             <e p="Controllers" t="Include">
               <e p="FromView" t="Include">
                 <e p="AttemptGridModelMoveCommand.cs" t="Include" />
                 <e p="SetupGridTransformCommand.cs" t="Include" />
+                <e p="StoreStateCommand.cs" t="Include" />
+                <e p="TransitionToGameCommand.cs" t="Include" />
+                <e p="TransitionToMenuCommand.cs" t="Include" />
               </e>
               <e p="ToView" t="Include">
                 <e p="InitialGameSetupCommand.cs" t="Include" />
+                <e p="RestoredGameSetupCommand.cs" t="Include" />
                 <e p="ToGridViewComponent.cs" t="Include" />
               </e>
             </e>
             <e p="model" t="Include">
               <e p="BlockDataModel.cs" t="Include" />
+              <e p="GamePersistentStateImpl.cs" t="Include" />
               <e p="GameStateImpl.cs" t="Include" />
               <e p="GridSpawners" t="Include">
                 <e p="BaseRandomSpawnerImpl.cs" t="Include" />
@@ -37,6 +46,7 @@
                 <e p="IGameState.cs" t="Include" />
                 <e p="IGridSpawner.cs" t="Include" />
                 <e p="IGridTransform.cs" t="Include" />
+                <e p="IIGamePersistentState.cs" t="Include" />
                 <e p="IPartialGrid.cs" t="Include" />
               </e>
               <e p="PartialGridImpl.cs" t="Include" />
@@ -44,8 +54,12 @@
             <e p="Signals" t="Include">
               <e p="FromView" t="Include">
                 <e p="AttemptGridModelMoveSignal.cs" t="Include" />
+                <e p="SaveStateBeforeQuitSignal.cs" t="Include" />
                 <e p="SetupGridTransformSignal.cs" t="Include" />
+                <e p="TransitionToGameSignal.cs" t="Include" />
+                <e p="TransitionToMenuSignal.cs" t="Include" />
               </e>
+              <e p="RestoreGameStateSignal.cs" t="Include" />
               <e p="SetupInitialGameStateSignal.cs" t="Include" />
               <e p="ToView" t="Include">
                 <e p="BaseToGridViewSignal.cs" t="Include" />
@@ -73,8 +87,19 @@
                 <e p="GridTransformView.cs" t="Include" />
                 <e p="GridTransformViewMediator.cs" t="Include" />
               </e>
+              <e p="Menu" t="Include">
+                <e p="GameBackButtonMediator.cs" t="Include" />
+                <e p="GameBackButtonView.cs" t="Include" />
+                <e p="MainMenuButtonsMediator.cs" t="Include" />
+                <e p="MainMenuButtonsView.cs" t="Include" />
+              </e>
+              <e p="ScriptableObjects" t="Include">
+                <e p="GameStateScriptableObject.cs" t="Include" />
+              </e>
               <e p="Signals" t="Include">
+                <e p="PlayerGoBackToMenuSignal.cs" t="Include" />
                 <e p="PlayerMoveDetachedGridSignal.cs" t="Include" />
+                <e p="PlayerSelectedGameModeSignal.cs" t="Include" />
               </e>
             </e>
           </e>

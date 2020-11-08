@@ -20,10 +20,12 @@ namespace BlockGame.Scripts.Model.Interfaces
         void Setup3x3(TData data, string format);
         void SetupEmptyFromTransform();
 
+        void StoreData(out TData[] array, out int rows, out int cols, out GridPosition pos);
+        void RestoreData(TData[] array, int rows, int cols, GridPosition pos);
+
         void Rebase(GridPosition pos);
         void Translate(int y, int x);
         void RemoveCol(int colToRemove);
-        
         void Merge(IPartialGrid<TData> other);
 
         IEnumerable<bool> EnumerateOccupancyOverRow(int colIdx);
