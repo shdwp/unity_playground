@@ -5,7 +5,7 @@ using BlockGame.Scripts.Model;
 using BlockGame.Scripts.Model.Interfaces;
 using BlockGame.Scripts.Signals;
 using BlockGame.Scripts.Signals.FromView;
-using BlockGame.Scripts.Signals.ToGridView;
+using BlockGame.Scripts.Signals.ToView;
 using strange.extensions.mediation.impl;
 using UnityEngine;
 
@@ -15,13 +15,12 @@ namespace BlockGame.Scripts.Views.Grid
     {
         [Inject] public AttachedGridView view { get; set; }
         
-        [Inject] public ReplaceGridInViewSignal<BlockDataModel> replaceGridInView { get; set; }
-        [Inject] public MergeGridInViewSignal<BlockDataModel> mergeGridInView { get; set; }
-
-        [Inject] public AttemptGridModelMoveSignal attemptGridModelMove { get; set; }
+        [Inject] public ReplaceGridInViewSignal<CellDataModel> replaceGridInView { get; set; }
+        [Inject] public MergeGridInViewSignal<CellDataModel> mergeGridInView { get; set; }
 
         public override void OnRegister()
         {
+            // add listener for when entire grid gets replaced
             replaceGridInView.AddListener((type, centroid, list) =>
             {
                 if (type == view.GridType)
@@ -30,6 +29,7 @@ namespace BlockGame.Scripts.Views.Grid
                 }
             });
             
+            // add listener for when gird is merged with another grid
             mergeGridInView.AddListener((type, centroid, enumerable) =>
             {
                 if (type == view.GridType)

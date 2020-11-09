@@ -31,11 +31,16 @@ namespace BlockGame.Scripts.Model
             {
                 for (int col = 0; col < 3; col++)
                 {
+                    // calculate format character position for this cell
                     var ch = format[(col * 3) + row];
+                    
                     if (ch != ' ')
                     {
+                        // character is filled - setup the data to this specific cell
                         _data[row, col] = data;
                     }
+                    
+                    // otherwise cell data remains as `default(TData)`
                 }
             }
         }
@@ -46,30 +51,21 @@ namespace BlockGame.Scripts.Model
             _rows = transform.rows;
             _cols = transform.cols;
             _pos = new GridPosition(0, 0);
-
-            for (int row = 0; row < _rows; row++)
-            {
-                for (int col = 0; col < _cols; col++)
-                {
-                    _data[row, col] = default;
-                }
-            }
         }
         
-        public bool IsPositionOccupied(GridPosition pos)
+        public bool IsPositionOccupied(GridPosition position)
         {
-            var data = default(TData);
-            if (pos.row < _data.GetLength(0) && pos.col < _data.GetLength(1))
+            if (position.row < _data.GetLength(0) && position.col < _data.GetLength(1))
             {
-                return !EqualityComparer<TData>.Default.Equals(_data[pos.row, pos.col], default);
+                return !EqualityComparer<TData>.Default.Equals(_data[position.row, position.col], default);
             }
-            else if (pos.row >= 0 && pos.col >= 0)
+            else if (position.row >= 0 && position.col >= 0)
             {
                 return false;
             }
             else
             {
-                throw new ArgumentOutOfRangeException("pos", "called with negative GridPosition");
+                throw new ArgumentOutOfRangeException("position", "called with negative GridPosition");
             }
         }
 
@@ -99,7 +95,7 @@ namespace BlockGame.Scripts.Model
             _pos.row += x;
             _pos.col += y;
 
-            _pos = transform.Clamp(_pos, _data);
+            ClampToTransform();
         }
 
         public void Rebase(GridPosition pos)
@@ -107,25 +103,58 @@ namespace BlockGame.Scripts.Model
             _pos = pos;
         }
 
-        public void Rotate(GridRotationDirection dir)
+        public void ClampToTransform()
         {
+            var minRow = Int32.MinValue;
+            var minCol = Int32.MinValue;
+            var maxRow = Int32.MaxValue;
+            var maxCol = Int32.MaxValue;
+            
+            // iterate over filled cells and figure out extents of the grid contents
+            // those will later be used as an additional constrains while position clamping
+            for (int row = 0; row < _data.GetLength(0); row++)
+            {
+                for (int col = 0; col < _data.GetLength(1); col++)
+                {
+                    if (!_data[row, col].Equals(default))
+                    {
+                        minCol = Math.Max(minRow, -col);
+                        maxCol = Math.Min(maxCol, -col);
+
+                        minRow = Math.Max(minRow, -row);
+                        maxRow = Math.Min(maxRow, -row);
+                    }
+                }
+            }
+            
+            // clamp to new position used transform size and calculated extents
+            _pos = new GridPosition(
+                Mathf.Clamp(pos.row, minRow, transform.rows - maxRow),
+                Mathf.Clamp(pos.col, minCol, transform.cols - maxCol)
+            );
         }
 
-        public void RemoveCol(int colToRemove)
+        public void RemoveColumn(int colToRemove)
         {
-            int newColIdx;
             var newData = new TData[transform.rows, transform.cols];
             
+            int newColIdx;
             for (int row = 0; row < _rows; row++)
             {
                 newColIdx = _cols - 1;
+                
+                // iterate columns backwards in so that the gap will be closed using the top and not the bottom
+                // (top falls down, contrary to bottom goes up)
                 for (int col = _cols - 1; col >= 0; col--)
                 {
                     if (col != colToRemove)
                     {
+                        // copy each column that is not intended to be removed to the new array
                         newData[row, newColIdx] = _data[row, col];
                         newColIdx--;
                     }
+                    
+                    // while the column to be removed will be skipped
                 }
             }
 
@@ -134,12 +163,15 @@ namespace BlockGame.Scripts.Model
 
         public void StoreData(out TData[] array, out int rows, out int cols, out GridPosition pos)
         {
+            // store simple vars
             rows = _rows;
             cols = _cols;
             pos = _pos;
             
+            // alloc array for cells
             array = new TData[_cols * _rows];
             
+            // store cells in one-dimensional array
             var i = 0;
             for (int row = 0; row < _rows; row++)
             {
@@ -153,11 +185,13 @@ namespace BlockGame.Scripts.Model
 
         public void RestoreData(TData[] array, int rows, int cols, GridPosition pos)
         {
+            // alloc two-dimensional array and setup variables
             _data = new TData[rows, cols];
             _rows = rows;
             _cols = cols;
             _pos = pos;
 
+            // map input one-dimensional array to data array
             var i = 0;
             for (int row = 0; row < _rows; row++)
             {
@@ -176,8 +210,10 @@ namespace BlockGame.Scripts.Model
                 for (int row = 0; row < _rows; row++)
                 {
                     var data = _data[row, col];
+                    
                     if (!EqualityComparer<TData>.Default.Equals(data, default))
                     {
+                        // enumerator only yields filled cells
                         yield return new GridCell<TData>(row + pos.row, col + pos.col, data);
                     }
                 }

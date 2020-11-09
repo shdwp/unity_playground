@@ -15,8 +15,10 @@ namespace BlockGame.Scripts.Views.Control
         {
             base.OnRegister();
             
+            // user pressed move key
             view.directionKeyPressed.AddListener((direction) =>
             {
+                // remap view-layer direction to model-layer control signals
                 switch (direction)
                 {
                     case KeyboardControlView.Direction.Left:

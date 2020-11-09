@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace BlockGame.Scripts.Model
 {
+    /// <summary>
+    /// Default implementation for grid transform
+    /// </summary>
     public class GridTransformImpl: IGridTransform
     {
         public int cols => _cols;
@@ -34,15 +37,18 @@ namespace BlockGame.Scripts.Model
 
         public GridPosition WorldToGridCustom(Vector3 pos, Func<float, int> rowFunction, Func<float, int> colFunction)
         {
+            // calculate world-space distance per row and column
             var perRow = (_bounds.extents.x * 2f) / _rows;
             var perCol = (_bounds.extents.y * 2f) / _cols;
 
-            var p = pos - _bounds.min;
+            // rebase position to the bounds
+            var centeredPos = pos - _bounds.min;
             
+            // calculate resulting positions using the functions provided
             return new GridPosition
             {
-                row = rowFunction(p.x / perRow),
-                col = colFunction(_cols - p.y / perCol),
+                row = rowFunction(centeredPos.x / perRow),
+                col = colFunction(_cols - centeredPos.y / perCol),
             };
         }
 
@@ -63,33 +69,6 @@ namespace BlockGame.Scripts.Model
         public Vector3 GridWorldCentroid<T>(IPartialGrid<T> grid) where T : IEquatable<T>
         {
             return GridToWorld((float)grid.pos.row + grid.rows / 2f, (float)grid.pos.col + grid.cols / 2f);
-        }
-
-        public GridPosition Clamp<T>(GridPosition pos, T[,] data) where T: IEquatable<T>
-        {
-            var minRow = Int32.MinValue;
-            var minCol = Int32.MinValue;
-            var maxRow = Int32.MaxValue;
-            var maxCol = Int32.MaxValue;
-            
-            for (int row = 0; row < data.GetLength(0); row++)
-            {
-                for (int col = 0; col < data.GetLength(1); col++)
-                {
-                    if (!data[row, col].Equals(default))
-                    {
-                        minCol = Math.Max(minRow, -col);
-                        maxCol = Math.Min(maxCol, -col);
-
-                        minRow = Math.Max(minRow, -row);
-                        maxRow = Math.Min(maxRow, -row);
-                    }
-                }
-            }
-            
-            pos.row = Mathf.Clamp(pos.row, minRow, _rows - maxRow);
-            pos.col = Mathf.Clamp(pos.col, minCol, _cols - maxCol);
-            return pos;
         }
 
         public bool IsGridInBounds<T>(IPartialGrid<T> grid) where T : IEquatable<T>

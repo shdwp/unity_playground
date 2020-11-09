@@ -10,8 +10,11 @@ using strange.extensions.context.api;
 using strange.extensions.context.impl;
 using UnityEngine;
 
-namespace BlockGame.Scripts
+namespace BlockGame.Scripts.Contexts
 {
+    /// <summary>
+    /// Context for menu scene
+    /// </summary>
     public class BlockGameMenuContext: MVCSContext
     {
         public BlockGameMenuContext(MonoBehaviour view, ContextStartupFlags flags) : base(view, flags)
@@ -31,8 +34,7 @@ namespace BlockGame.Scripts
             base.mapBindings();
 
             commandBinder.Bind<TransitionToGameSignal>().To<TransitionToGameCommand>();
-            injectionBinder.Bind<PlayerSelectedGameModeSignal>().ToSingleton();
-            injectionBinder.Bind<IIGamePersistentState>().To<GamePersistentStateImpl>().ToSingleton();
+            injectionBinder.Bind<IIGamePersistentState>().To<ScriptableObjectPersistentStateImpl>().ToSingleton();
             mediationBinder.BindView<MainMenuButtonsView>().ToMediator<MainMenuButtonsMediator>();
         }
     }

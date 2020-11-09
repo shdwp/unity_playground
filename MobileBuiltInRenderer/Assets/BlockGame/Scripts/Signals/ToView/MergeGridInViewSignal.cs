@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Numerics;
-using BlockGame.Scripts.Model.Interfaces;
-using BlockGame.Scripts.Signals.ToView;
-using strange.extensions.signal.impl;
-
-namespace BlockGame.Scripts.Signals.ToGridView
+﻿namespace BlockGame.Scripts.Signals.ToView
 {
+    /// <summary>
+    /// Fired when model layer merges two grids
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class MergeGridInViewSignal<T>: BaseToGridViewSignal<T>
     {
         

@@ -1,7 +1,11 @@
-﻿using BlockGame.Scripts.Model.Interfaces;
+﻿using BlockGame.Scripts.Contexts;
+using BlockGame.Scripts.Model.Interfaces;
 
 namespace BlockGame.Scripts.Model.GridSpawners
 {
+    /// <summary>
+    /// True random spawner implementation - simply randomly spawns one of the figures.
+    /// </summary>
     public class TrueRandomSpawnerImpl: BaseRandomSpawnerImpl
     {
         public override GridSpawnerType type => GridSpawnerType.TrueRandom;

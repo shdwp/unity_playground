@@ -1,12 +1,10 @@
-﻿using BlockGame.Scripts.Controllers;
-using BlockGame.Scripts.Controllers.FromView;
+﻿using BlockGame.Scripts.Controllers.FromView;
 using BlockGame.Scripts.Controllers.ToView;
 using BlockGame.Scripts.Model;
-using BlockGame.Scripts.Model.GridSpawners;
 using BlockGame.Scripts.Model.Interfaces;
 using BlockGame.Scripts.Signals;
 using BlockGame.Scripts.Signals.FromView;
-using BlockGame.Scripts.Signals.ToGridView;
+using BlockGame.Scripts.Signals.ToView;
 using BlockGame.Scripts.Views.Block;
 using BlockGame.Scripts.Views.Control;
 using BlockGame.Scripts.Views.Grid;
@@ -20,15 +18,11 @@ using strange.extensions.context.api;
 using strange.extensions.context.impl;
 using UnityEngine;
 
-namespace BlockGame.Scripts
+namespace BlockGame.Scripts.Contexts
 {
-    public enum GridSpawnerType
-    {
-        GrabBag,
-        SpecificFigures,
-        TrueRandom
-    }
-    
+    /// <summary>
+    /// Context for game scene.
+    /// </summary>
     public class BlockGameContext: MVCSContext
     {
         public BlockGameContext(MonoBehaviour view, ContextStartupFlags flags) : base(view, flags)
@@ -53,44 +47,55 @@ namespace BlockGame.Scripts
             BindCommands();
         }
 
+        /// <summary>
+        /// Binds instance of GameObjectPool
+        /// </summary>
+        /// <param name="instance"></param>
         public void BindGameObjectPoolInstance(GameObjectPool instance)
         {
             injectionBinder.Bind<GameObjectPool>().To(instance);
         }
-
-        public void BindSpawnerClass<T>()
-        {
-            injectionBinder.Bind<IGridSpawner<BlockDataModel>>().To<T>().ToSingleton();
-        }
-
+        
+        /// <summary>
+        /// Bind game state scriptable object instance
+        /// </summary>
+        /// <param name="instance"></param>
+        /// <typeparam name="T"></typeparam>
         public void BindGameStateScriptableObjectInstance<T>(T instance)
         {
             injectionBinder.Bind<T>().To(instance);
         }
 
+        /// <summary>
+        /// Bind spawner class T to IGridSpawner interface
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        public void BindSpawnerClass<T>()
+        {
+            injectionBinder.Bind<IGridSpawner<CellDataModel>>().To<T>().ToSingleton();
+        }
+
         private void BindModels()
         {
-            injectionBinder.Bind<IPartialGrid<BlockDataModel>>().To<PartialGridImpl<BlockDataModel>>();
+            injectionBinder.Bind<IPartialGrid<CellDataModel>>().To<PartialGridImpl<CellDataModel>>();
             
-            injectionBinder.Bind<IGameState>().To<GameStateImpl>().ToSingleton();
-            injectionBinder.Bind<IIGamePersistentState>().To<GamePersistentStateImpl>().ToSingleton();
+            injectionBinder.Bind<IGameFieldState>().To<GameFieldStateImpl>().ToSingleton();
+            injectionBinder.Bind<IIGamePersistentState>().To<ScriptableObjectPersistentStateImpl>().ToSingleton();
             injectionBinder.Bind<IGridTransform>().To<GridTransformImpl>().ToSingleton();
             injectionBinder.Bind<ToGridViewComponent>().ToSingleton();
         }
 
         private void BindSignals()
         {
-            injectionBinder.Bind<ReplaceGridInViewSignal<BlockDataModel>>().ToSingleton();
-            injectionBinder.Bind<MergeGridInViewSignal<BlockDataModel>>().ToSingleton();
+            injectionBinder.Bind<ReplaceGridInViewSignal<CellDataModel>>().ToSingleton();
+            injectionBinder.Bind<MergeGridInViewSignal<CellDataModel>>().ToSingleton();
             injectionBinder.Bind<PlayerMoveDetachedGridSignal>().ToSingleton();
-            injectionBinder.Bind<PlayerGoBackToMenuSignal>().ToSingleton();
         }
 
         private void BindMediators()
         {
             mediationBinder.BindView<KeyboardControlView>().ToMediator<KeyboardControlMediator>();
             mediationBinder.BindView<GameBackButtonView>().ToMediator<GameBackButtonMediator>();
-            mediationBinder.BindView<BlockView>().ToMediator<BlockViewMediator>();
             mediationBinder.BindView<GridTransformView>().ToMediator<GridTransformViewMediator>();
             
             mediationBinder.BindView<DetachedGridView>().ToMediator<DetachedGridViewMediator>();

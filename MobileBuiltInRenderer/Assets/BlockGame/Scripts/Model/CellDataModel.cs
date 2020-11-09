@@ -2,8 +2,12 @@
 
 namespace BlockGame.Scripts.Model
 {
+    /// <summary>
+    /// Data class for cell-specific information.
+    /// Currently only holds color information.
+    /// </summary>
     [Serializable]
-    public struct BlockDataModel: IEquatable<BlockDataModel>
+    public struct CellDataModel: IEquatable<CellDataModel>
     {
         public enum Color
         {
@@ -28,19 +32,19 @@ namespace BlockGame.Scripts.Model
             Color.Purple
         };
 
-        public BlockDataModel(Color color)
+        public CellDataModel(Color color)
         {
             this.color = color;
         }
 
-        public bool Equals(BlockDataModel other)
+        public bool Equals(CellDataModel other)
         {
             return color == other.color;
         }
 
         public override bool Equals(object obj)
         {
-            return obj is BlockDataModel other && Equals(other);
+            return obj is CellDataModel other && Equals(other);
         }
 
         public override int GetHashCode()

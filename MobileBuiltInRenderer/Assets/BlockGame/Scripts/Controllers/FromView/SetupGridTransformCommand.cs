@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace BlockGame.Scripts.Controllers.FromView
 {
+    /// <summary>
+    /// Command to setup IGridTransform with values from editor
+    /// </summary>
     public class SetupGridTransformCommand: Command
     {
         [Inject] public Bounds bounds { get; set; }

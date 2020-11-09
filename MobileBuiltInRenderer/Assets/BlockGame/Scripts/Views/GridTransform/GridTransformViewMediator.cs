@@ -4,6 +4,9 @@ using strange.extensions.mediation.impl;
 
 namespace BlockGame.Scripts.Views.GridTransform
 {
+    /// <summary>
+    /// Mediator for grid setup. Will fire SetupGridTransformSignal with values from editor when registered.
+    /// </summary>
     public class GridTransformViewMediator: Mediator
     {
         [Inject] public GridTransformView view { get; set; }

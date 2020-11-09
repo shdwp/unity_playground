@@ -7,18 +7,24 @@ using UnityEngine;
 
 namespace BlockGame.Scripts.Model
 {
-    public class GameStateImpl: IGameState
+    /// <summary>
+    /// Default implementation for IGameFieldState
+    /// </summary>
+    public class GameFieldStateImpl: IGameFieldState
     {
         [Inject] public IInjectionBinder binder { get; set; }
-        [Inject] public IPartialGrid<BlockDataModel> attachedGrid { get; set; }
-        [Inject] public IPartialGrid<BlockDataModel> detachedGrid { get; set; }
+        [Inject] public IPartialGrid<CellDataModel> attachedGrid { get; set; }
+        [Inject] public IPartialGrid<CellDataModel> detachedGrid { get; set; }
         
         [Inject] public IGridTransform transform { get; set; }
-        [Inject] public IGridSpawner<BlockDataModel> spawner { get; set; }
+        [Inject] public IGridSpawner<CellDataModel> spawner { get; set; }
 
         public void SetupInitialAttachedGrid()
         {
-            attachedGrid = binder.GetInstance<IPartialGrid<BlockDataModel>>();
+            // get new instance from DI
+            attachedGrid = binder.GetInstance<IPartialGrid<CellDataModel>>();
+            
+            // setup it based on DI transform
             attachedGrid.SetupEmptyFromTransform();
         }
 
@@ -30,20 +36,26 @@ namespace BlockGame.Scripts.Model
         public void SpawnNewDetachedGrid()
         {
             detachedGrid = spawner.SpawnRandomGrid();
-            detachedGrid.Rebase(new GridPosition(0, 0));
         }
 
         public bool RemoveCompletedRowsIfNeeded()
         {
+            // bool to indicate whether grid was altered during cycle
             var alteredGrid = false;
             
             for (int col = 0; col < attachedGrid.cols; col++)
             {
+                // count occupied cells on this column
                 var occupiedCols = attachedGrid.EnumerateOccupancyOverRow(col).Aggregate(0, (a, b) => a + (b ? 1 : 0));
+                
                 if (occupiedCols == attachedGrid.rows)
                 {
-                    attachedGrid.RemoveCol(col);
+                    // every cell was occupied (full row), meaning that it is completed and can be removed
+                    attachedGrid.RemoveColumn(col);
+                    
                     alteredGrid = true;
+                    
+                    // alter counter so that cycle dont skip lines
                     col--;
                 }
             }
@@ -53,6 +65,7 @@ namespace BlockGame.Scripts.Model
 
         public bool TestGridsCollision()
         {
+            // test for both intergrid collisions and bound collisions
             return !transform.IsGridInBounds(detachedGrid) || attachedGrid.DoesCollideWith(detachedGrid);
         }
     }

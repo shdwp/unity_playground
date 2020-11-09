@@ -6,8 +6,16 @@ using UnityEngine;
 
 namespace BlockGame.Scripts.Views.Control
 {
+    /// <summary>
+    /// Control class for keyboard (AD - moves tetrominoes, S makes them fall faster).
+    ///
+    /// Yields events continuously until player released the button.
+    /// </summary>
     public class KeyboardControlView : View
     {
+        /// <summary>
+        /// Direction enum for returned events
+        /// </summary>
         public enum Direction
         {
             Left,
@@ -15,6 +23,9 @@ namespace BlockGame.Scripts.Views.Control
             Down
         }
         
+        /// <summary>
+        /// Signal for outgoing move events
+        /// </summary>
         public Signal<Direction> directionKeyPressed = new Signal<Direction>();
         
         private void Update()
@@ -33,11 +44,6 @@ namespace BlockGame.Scripts.Views.Control
             {
                 directionKeyPressed.Dispatch(Direction.Down);
             }
-        }
-
-        private void OnEnable()
-        {
-            Camera.main.depthTextureMode = DepthTextureMode.Depth;
         }
     }
 }
