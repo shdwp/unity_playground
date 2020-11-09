@@ -7,6 +7,8 @@ Collection of various small projects done in Unity.
 * [ARDemo](https://github.com/shdwp/unity_playground/tree/master/HighDefinitionRenderer/Assets/ARDemo) - Augmented Reality demo, tracks marker image via _MaxstAR SDK_, with targets appearing over marker following tracks on it.
 * [LightsaberDemo](https://github.com/shdwp/unity_playground/tree/master/HighDefinitionRenderer/Assets/LigthsaberDemo) - Demo where you can cut meshes in two using lightsaber (custom trail renderer/complex mesh cutting).
 #### Mobile-targeted built-in renderer demos
+All mobile demos were targeting *iPhone 1334x750 Portrait*, some of them may not have adaptive UI.
+
 * [MatchTwoGameDemo](https://github.com/shdwp/unity_playground/tree/master/MobileBuiltInRenderer/Assets/MatchTwoGame) - Simple *match two* game, with HTTP resources load, custom shaders and Unity animations. [Short video](https://gfycat.com/incomparableajarkoi)
 * [SnowplowGameDemo](https://github.com/shdwp/unity_playground/tree/master/MobileBuiltInRenderer/Assets/SnowplowGame) - Demo in which user controls snow plowing truck, which clears snow off the road. Custom shader changing geometry based on the mask, which is drawn using scanline techinuque. [Short video](https://gfycat.com/idiotickindlyamericankestrel)
 * [BlockGame](https://github.com/shdwp/unity_playground/tree/master/MobileBuiltInRenderer/Assets/BlockGame) - Tetris implementation with full-swing inversion of control and dependecy injection (StrangeIoC). May very well be the most over-engineered tetris to ever exist.
